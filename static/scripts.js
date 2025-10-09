@@ -32,7 +32,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   const skillItems = document.querySelectorAll(".skillItem");
   skillItems.forEach((item, index) => {
-    item.style.animationDelay = `${index * 0.2}s`; // 0.2s stagger
+    item.style.animationDelay = `${index * 0.2}s`;
   });
 });
 
@@ -184,22 +184,3 @@ function prevProject() {
 }
 
 document.addEventListener("DOMContentLoaded", renderProjects);
-
-// Contact Section
-document.getElementById("contactForm").addEventListener("submit", function(e) {
-  e.preventDefault(); // stop normal redirect
-  const formData = new FormData(this);
-
-  fetch("https://formsubmit.co/YOUR_EMAIL", {
-    method: "POST",
-    body: formData
-  })
-  .then(response => {
-    if (response.ok) {
-      document.getElementById("alertBox").classList.remove("d-none");
-      this.reset();
-    } else {
-      alert("Something went wrong. Try again.");
-    }
-  });
-});

@@ -215,64 +215,6 @@
   transition: opacity 0.5s ease-in-out;
 }
 
-/* Project section @media */
-@media (max-width: 768px) {
-    nav ul {
-    flex-direction: column;
-    align-items: right;
-    gap: 0.75rem;
-  }
-
-  .nav-link {
-    width: 100%;
-    text-align: center;
-    border-bottom: none; /* remove underline on stacked layout */
-  }
-
-  .nav-link.active {
-    color:currentColor;
-    border:none; /* vertical highlight instead */
-  }
-
-  .project-display {
-    justify-content: center;
-    gap: 0.5rem;
-  }
-
-  .project-card {
-    width: 85%; 
-    max-width: 320px;   
-    transform: scale(1); 
-    margin: 0 auto;
-  }
-
-  .project-card img{
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    overflow:visible;
-  }
-
-  .project-card.active {
-    transform: scale(1.25); 
-    margin-top: 10px;
-  }
-
-  .project-card.dimmed {
-    display: none;
-  }
-
-  .carousel-arrow {
-    font-size: 1.5rem;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-}
-.carousel-arrow.left { left: 50px; }
-.carousel-arrow.right { right: 50px; }
-
-}
-
 /* Certificates section */
 .certificate-card img{
   border-radius:12px;
@@ -371,6 +313,74 @@
 /* Card Images */
 .project-card:hover .project-overlay, .certificate-card:hover .certificate-overlay{
   opacity: 1;
+}
+
+/* Small Screens */
+@media (max-width: 768px) {
+    nav ul {
+    flex-direction: column;
+    align-items: right;
+    gap: 0.75rem;
+  }
+
+  .nav-link {
+    width: 100%;
+    text-align: center;
+    border-bottom: none; 
+  }
+
+  .nav-link.active {
+    color:currentColor;
+    border:none;
+  }
+
+  .project-display {
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  .project-card {
+    width: 85%; 
+    max-width: 320px;   
+    transform: scale(1); 
+    margin: 0 auto;
+  }
+
+  .project-card img{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    overflow:visible;
+  }
+
+  .project-card.active {
+    transform: scale(1.25); 
+    margin-top: 10px;
+  }
+
+  .project-card.dimmed {
+    display: none;
+  }
+
+  .carousel-arrow {
+    font-size: 1.5rem;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.carousel-arrow.left { left: 50px; }
+.carousel-arrow.right { right: 50px; }
+
+/* Education Section */
+#education h4{
+  margin-top:5px;
+  font-size:.9rem;
+}
+
+#education p{
+  font-size:.8rem;
+}
+
 }
 
 /* Others */
