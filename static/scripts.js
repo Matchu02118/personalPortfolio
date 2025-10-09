@@ -127,8 +127,6 @@ function renderProjects() {
       </div>
     </div>
   `;
-
-  // reset image cycling for the new active project
   startImageCycle(currentIndex);
 }
 
@@ -186,3 +184,22 @@ function prevProject() {
 }
 
 document.addEventListener("DOMContentLoaded", renderProjects);
+
+// Contact Section
+document.getElementById("contactForm").addEventListener("submit", function(e) {
+  e.preventDefault(); // stop normal redirect
+  const formData = new FormData(this);
+
+  fetch("https://formsubmit.co/YOUR_EMAIL", {
+    method: "POST",
+    body: formData
+  })
+  .then(response => {
+    if (response.ok) {
+      document.getElementById("alertBox").classList.remove("d-none");
+      this.reset();
+    } else {
+      alert("Something went wrong. Try again.");
+    }
+  });
+});
