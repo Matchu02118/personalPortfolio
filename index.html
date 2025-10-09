@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carl Mathew Estorga's Portfolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/e96ddb5a13.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="static/styles.css">
+</head>
+<body class="custom-bg">
+<nav id="navbar" class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+  <div class="container-fluid">
+    <a class="navbar-brand bold ms-5" href="#">Portfolio</a>
+
+    <!-- Toggler Button -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+            aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Collapsible Content -->
+    <div class="collapse navbar-collapse" id="navbarContent">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a href="#home" class="nav-link px-2 text-end nav-1">Home</a></li>
+        <li class="nav-item"><a href="#about" class="nav-link px-2 text-end nav-2">About Me</a></li>
+        <li class="nav-item"><a href="#skills" class="nav-link px-2 text-end nav-3">Skills</a></li>
+        <li class="nav-item"><a href="#projects" class="nav-link px-2 text-end nav-4">Projects</a></li>
+        <li class="nav-item"><a href="#education" class="nav-link px-2 text-end nav-5">Education</a></li>
+        <li class="nav-item"><a href="#certificates" class="nav-link px-2 text-end nav-6">Certificates</a></li>
+        <li class="nav-item"><a href="#contacts" class="nav-link px-2 text-end nav-7">Contact Me</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  <!-- Introduction -->
+  <section id="home" class="intro d-flex align-items-center justify-content-center" 
+           style="scroll-margin-top:90px; min-height:100vh; padding-top:70px;">
+    <div class="card text-center p-5 shadow-lg text-light" 
+         style="background-color:#1c1f23; border-radius:12px; max-width:800px;">
+      <!-- <i class="fa-regular fa-circle-user mb-4 mx-auto" style="font-size:5rem; color:#adb5bd;"></i> -->
+      <img src="static/img/pic.JPG" alt="Profile Pic" style="width:30%; height:auto; border-radius:50%;" class="mx-auto">
+      <h1 class="fw-bold">Hello! I'm Carl Mathew Estorga</h1>
+      <h3 class="text-secondary">and I am a Computer Engineer</h3>
+      <p class="lead mt-3">Aspiring System Administrator with practical experience in Linux, Raspberry Pi projects, and foundational knowledge of Python, HTML, and CSS.</p>
+      <a href="/static/Resume Estorga.pdf" class="btn btn-outline-light mt-4 w-100" style="max-width:185px; margin:0 auto;">Download my resume</a>
+    </div>
+  </section>
+
+  <!-- About Me -->
+  <section id="about" class="section-offset">
+    <div class="d-flex align-items-center justify-content-center">
+            <i class="fa-solid fa-address-card mt-3" style="font-size:4rem;"></i>
+            <h1 class="mt-4 mx-3">About <span style="color:lightblue">Me</span></h2>
+    </div>
+    <div class="container d-flex justify-content-center mt-3">
+      <div class="card text-light p-4 shadow-lg"
+          style="background-color:#1c1f23; max-width:800px; border-radius:12px;">
+        <p class="lead mb-3" style="text-align:justify;">
+          I'm a Computer Engineering graduate with a passion for software maintenance,
+          backed by a strong foundation in circuit diagram and flowchart design. I'm knowledgeable in
+          Python, HTML, and CSS, with hands-on experience in microcontroller programming, circuit
+          analysis, Linux OS, and software troubleshooting. Proficient in Microsoft 365 and Google Workspace
+          for efficient documentation, data management, and collaborative work.
+        </p>
+      </div>
+    </div>
+  </section> 
+
+  <!-- Skills -->
+  <section id="skills" class="section-offset py-5">
+    <div class="text-center mb-4">
+      <h1><span class="my-text">My</span> <span class="skills-text" style="color:#ff3131">Skills</span></h1>
+    </div>
+
+    <div class="container">
+      <div class="row g-4 justify-content-center">
+        <!-- Skill Card -->
+        <div class="col-md-4">
+          <div class="skillItem p-3 d-flex align-items-center rounded shadow-lg">
+            <i class="fa-brands fa-raspberry-pi"></i>
+            <div class="ms-3">
+              <h4 class="mb-1">Raspberry Pi</h4>
+              <p class="text-light small mb-0">Microcontroller projects, GPIO interfacing, and automation.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="skillItem p-3 d-flex align-items-center rounded shadow-lg">
+            <i class="fa-brands fa-linux"></i>
+            <div class="ms-3">
+              <h4 class="mb-1">Linux</h4>
+              <p class="text-light small mb-0">User, Group, File, Permission & Ownership, and Package Management</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="skillItem p-3 d-flex align-items-center rounded shadow-lg">
+            <i class="fa-brands fa-python"></i>
+            <div class="ms-3">
+              <h4 class="mb-1">Python</h4>
+              <p class="text-light small mb-0">Desktop applications, Machine Learning, Automation & Scritpting</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="skillItem p-3 d-flex align-items-center rounded shadow-lg">
+            <i class="fa-solid fa-database"></i>
+            <div class="ms-3">
+              <h4 class="mb-1">SQL</h4>
+              <p class="text-light small mb-0">MySQL, SQLite</p>
+            </div>
+          </div>
+        </div>      
+        <div class="col-md-4">
+          <div class="skillItem p-3 d-flex align-items-center rounded shadow-lg">
+            <i class="fa-brands fa-windows"></i>
+            <div class="ms-3">
+              <h4 class="mb-1">Microsoft 365 (Microsoft Office)</h4>
+              <p class="text-light small mb-0">Microsoft Word, Microsoft Excel, Outlook, Microsoft PowerPoint</p>
+            </div>
+          </div>
+        </div>
+              <div class="col-md-4">
+          <div class="skillItem p-3 d-flex align-items-center rounded shadow-lg">
+            <i class="fa-brands fa-google"></i>
+            <div class="ms-3">
+              <h4 class="mb-1">Google Workspace</h4>
+              <p class="text-light small mb-0">Google Docs, Google Mail, Google Sheets, Google Drive</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="section-offset py-5">
+    <div class="d-flex align-items-center justify-content-center mb-4">
+      <h1>My <span style="color:#00bf63">Projects</span></h1>
+    </div>
+
+    <div class="project-carousel d-flex align-items-center justify-content-center">
+
+      <button class="carousel-arrow left" onclick="prevProject()">&#10094;</button>
+      <div class="project-display d-flex">
+      </div>
+      <button class="carousel-arrow right" onclick="nextProject()">&#10095;</button>
+    </div>
+</section>
+
+  <!-- Education -->
+  <section id="education" class="section-offset" style="scroll-margin-top:10px;">
+    <div class="d-flex align-items-center justify-content-center">
+      <h1>Educ<span style="color:#8c52ff">ation</span></h1>
+    </div>
+    <div class="container mt-3 d-flex justify-content-between align-items-center" style="border-radius:30px; background-color:#2c2f33; width:80%;">
+      <h4 class="fw-bold">Bachelor of Science in Computer Engineering</h4>
+      <h4 class="fw-light text-align-right">2021 to 2025</h4>
+    </div>
+    <div class="container d-flex align-items-center mt-4 flex-column text-justify" style="border-radius: 15px; background-color:#2c2f33; width:80%;">
+      <p>During my years studying Computer Engineering, I developed a strong foundation in both hardware and software disciplines. My interest in Linux began when our instructor introduced us to system and network administration tasks—an experience that sparked my appreciation for its efficiency and reliability in server and security environments. I also gained practical experience working with Arduino-based projects such as an obstacle-avoiding robot and a flame detection system.</p>
+      <p>For my thesis, my partner and I developed a robotic device programmed in Python and trained with YOLOv5 custom datasets to identify and segregate garbage, combining machine learning and robotics into a practical environmental solution. Although hardware wasn’t my strongest area, I contributed to electrical projects like a multi-voltage power supply and an audio amplifier by assisting in schematic design and analysis. These projects honed my understanding of logic circuit diagrams and reinforced my analytical problem-solving skills. I also excelled in number system computations (Binary, Octal, and Hexadecimal), which strengthened my grasp of digital systems and low-level computer operations.</p>
+    </div>
+  </section>
+
+  <!-- Certificates -->
+  <section id="certificates" class="section-offset" style="scroll-margin-top:20px;">
+    <div class="d-flex align-items-center justify-content-center">
+      <h1>My <span style="color:#ffde59">Certificates</span></h1>
+    </div>
+      <div class="container mt-4">
+    <div class="row g-4 justify-content-center">  
+
+      <div class="col-md-4">
+        <div class="certificate-card position-relative overflow-hidden">
+          <img id="project1-img" src="static/img/certificates/1.png" class="img-fluid w-100 fade-anim" alt="Certificate 1">
+          <div class="certificate-overlay text-light p-3">
+            <h5>Certificate of Participation: Webinar on Digital Opportunities using ICT</h5>
+            <div class="d-flex project-src align-items-center justify-content-center">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="certificate-card position-relative overflow-hidden">
+          <img id="project2-img" src="static/img/certificates/2.png" class="img-fluid w-100 fade-anim" alt="Certificate 2">
+          <div class="certificate-overlay text-light p-3">
+            <h5>Certificate of Participation: AIVolution - AI Revolution: Unlocking the Potential of Tomorrow</h5>
+            <div class="d-flex project-src align-items-center justify-content-center">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="certificate-card position-relative overflow-hidden">
+          <img src="static/img/certificates/3.png" class="img-fluid w-100" alt="Certificate 3">
+          <div class="certificate-overlay text-light p-3">
+            <h5>Certificate of Completion: TESDA - Setting Up Computer Networks</h5>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="certificate-card position-relative overflow-hidden">
+          <img src="static/img/certificates/4.png" class="img-fluid w-100" alt="Certificate 4">
+          <div class="certificate-overlay text-light p-3">
+            <h5>FreeCodeCamp - Responsive Web Design</h5>
+            <div class="d-flex project-src align-items-center justify-content-center">
+              <a href="https://freecodecamp.org/certification/CMathchu11/responsive-web-design" target="_blank">Certificate Link</a>
+              <i class="fa-solid fa-arrow-up-right-from-square link-icon"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="certificate-card position-relative overflow-hidden">
+          <img src="static/img/certificates/5.png" class="img-fluid w-100" alt="Certificate 5">
+          <div class="certificate-overlay text-light p-3">
+            <h5>SoloLearn - Introduction to Python</h5>
+          </div>
+        </div>
+      </div>    
+    </div>
+  </div>
+  </section>
+
+  <!-- Contact Me -->
+  <section id="contacts" class="section-offset" style="scroll-margin-top:10px;">
+    <div class="d-flex align-items-center justify-content-center">
+      <h1>Contact <span style="color:orange">Me</span></h1>
+    </div>
+
+    <!-- E-Mail Form -->
+    <div class="form-wrapper mx-auto mt-2">
+      <form class="contact-form" action="https://formsubmit.co/estorga.carlmathew11@outlook.com" method="POST">
+        
+        <!-- Hidden Controls -->
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="https://yourdomain.com/thank-you.html">
+        <input type="hidden" name="_template" value="table">
+
+        <!-- Form Fields -->
+        <div class="d-flex mb-3">
+          <input type="text" name="name" placeholder="Name (Optional)" class="form-input w-50">
+          <input type="email" name="email" placeholder="E-Mail Address" class="form-input ms-2 w-50" required>
+        </div>
+        <input type="text" name="subject" placeholder="Email Subject" class="form-input mb-1" required>
+        <textarea name="message" placeholder="Message Body" rows="4" class="form-textarea mb-3" required></textarea>
+        <button type="submit" class="submit-btn">Submit E-Mail</button>
+      </form>
+    </div>
+
+    
+    <!-- Social links -->
+    <div class="d-flex justify-content-center gap-3 mt-4">
+      <a href="https://www.facebook.com/carl.mathew.694166" target="_blank"><i class="social fa-brands fa-facebook" style="font-size:3rem;"></i></a>
+      <a href="www.linkedin.com/in/carl-mathew-estorga-163855372" target="_blank"><i class="social fa-brands fa-linkedin" style="font-size:3rem;"></i></a>
+      <a href="https://github.com/Matchu02118" target="_blank"><i class="social fa-brands fa-github" style="font-size:3rem;"></i></a>
+    </div>
+  </section>
+
+  <script src="./static/scripts.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+</html>
