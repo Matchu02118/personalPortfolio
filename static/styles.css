@@ -341,7 +341,7 @@
 
   .project-card {
     width: 85%; 
-    max-width: 320px;   
+    max-width: 300px;   
     transform: scale(1); 
     margin: 0 auto;
   }
@@ -367,9 +367,11 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-}
-.carousel-arrow.left { left: 50px; }
-.carousel-arrow.right { right: 50px; }
+  }
+
+  .carousel-arrow.left { left:20px; }
+  .carousel-arrow.right { right:20px; }
+
 
 /* Education Section */
 #education h4{
