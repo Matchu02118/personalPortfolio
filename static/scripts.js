@@ -41,7 +41,8 @@ const projectImages = {
   0: [
     "static/img/projects/1.jpg",
     "static/img/projects/1-b.jpg",
-    "static/img/projects/1-c.jpg"
+    "static/img/projects/1-c.jpg",
+    "static/img/projects/1-d.jpg"
   ],
   1: [
     "static/img/projects/2.jpg",
@@ -53,6 +54,9 @@ const projectImages = {
   ],
   3: [
     "static/img/projects/4.jpg"
+  ],
+  4:[
+    "static/img/projects/5.png"
   ]
 };
 
@@ -79,6 +83,11 @@ const projects = [
     img: "static/img/projects/4.jpg",
     title: "Obstacle Avoiding Robot",
     desc: "Arduino-based project."
+  },
+  {
+    img: "static/img/projects/5.png",
+    title: "Scientific Calculator App",
+    desc: "A virtual Casio FX"
   }
 ];
 

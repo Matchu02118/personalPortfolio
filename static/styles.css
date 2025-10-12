@@ -116,7 +116,7 @@
   background-color: #1c1f23;
   border-radius: 12px;
   box-shadow: 0 0 10px rgba(0,0,0,0.5);
-  padding: 1rem;
+  padding: 0.5rem;
   text-align: center;
   transition: transform 0.4s ease, opacity 0.4s ease;
   width: 280px;
@@ -127,9 +127,9 @@
 
 .project-card img {
   width: 100%;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 8px;
+  height: 250px;
+  object-fit: contain;
+  border-radius: 15px;
 }
 
 .project-card.active {
