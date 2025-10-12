@@ -87,7 +87,7 @@ const projects = [
   {
     img: "static/img/projects/5.png",
     title: "Scientific Calculator App",
-    desc: "A virtual Casio FX"
+    desc: "A virtual Casio fx-100ms calculator. Made using MATLAB"
   }
 ];
 
