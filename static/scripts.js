@@ -7,7 +7,7 @@
 
     sections.forEach(section => {
       const sectionTop = section.offsetTop - 120;
-      if (pageYOffset >= sectionTop) {
+      if (window.scrollY >= sectionTop) {
         current = section.getAttribute('id');
       }
     });
@@ -20,10 +20,6 @@
       }
     });
   }
-
-  window.addEventListener('scroll', updateActiveLink);
-  window.addEventListener('load', updateActiveLink);
-
 
   window.addEventListener('scroll', updateActiveLink);
   window.addEventListener('load', updateActiveLink);
@@ -73,11 +69,6 @@ const projects = [
     title: "File Organizer App",
     desc: "Desktop app for sorting and managing files.",
     link: "https://github.com/Matchu02118/file_organizer"
-  },
-  {
-    img: "static/img/projects/3.jpg",
-    title: "IP Subnetting App",
-    desc: "Made using Python's PyQt6 library."
   },
   {
     img: "static/img/projects/4.jpg",
