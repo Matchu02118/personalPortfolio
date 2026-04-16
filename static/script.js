@@ -11,13 +11,16 @@ const sections = {
       <div class="content-block about-grid">
         <div class="about-text">
           <h4>About Me</h4>
-          <p>
+          <p style="text-align: justify;">
             I'm a Bachelor of Science in Computer Engineering graduate with a passion for software maintenance,
             backed by a strong foundation in circuit diagram and flowchart design. I'm knowledgeable in Python,
             HTML, and CSS, with hands-on experience in microcontroller programming, circuit analysis, Linux OS,
             and software troubleshooting. Proficient in Microsoft 365 and Google Workspace for efficient
             documentation, data management, and collaborative work.
           </p>
+        </div>
+        <div class="about-visual">
+          <img src="static/grad-pic-UST-L.png" alt="Graduation photo" />
         </div>
       </div>
     `,
@@ -158,7 +161,7 @@ const sections = {
           <h5>TESDA - Setting Up Computer Networks</h5>
           <p>Official completion certificate for a computer networking course.</p>
         </article>
-        <article class="project-card certificate-clickable center">
+        <article class="project-card certificate-clickable">
           <img src="static/img/certificates/4.png" alt="freeCodeCamp Responsive Web Design certificate" />
           <h5>freeCodeCamp Responsive Web Design</h5>
           <p>Responsive web design certification demonstrating front-end web development skills.</p>
@@ -265,8 +268,20 @@ const taskbar = document.getElementById("taskbar");
 const imageModal = document.getElementById("image-modal");
 const imageModalImg = document.getElementById("image-modal-img");
 const imageModalCaption = document.getElementById("image-modal-caption");
+const imageModalDescription = document.getElementById("image-modal-description");
 const imageModalClose = document.getElementById("image-modal-close");
+const projectModal = document.getElementById("project-modal");
+const projectModalImage = document.getElementById("project-modal-img");
+const projectModalCaption = document.getElementById("project-modal-caption");
+const projectModalDescription = document.getElementById("project-modal-description");
+const projectModalGithub = document.getElementById("project-modal-github");
+const projectModalPrev = document.getElementById("project-modal-prev");
+const projectModalNext = document.getElementById("project-modal-next");
+const projectModalClose = document.getElementById("project-modal-close");
 let hideTimer = null;
+let projectAutoIntervals = [];
+let currentProjectModalIndex = 0;
+let currentProjectModalImageIndex = 0;
 
 function setActiveSection(section) {
   sectionTitle.textContent = sections[section].title;
@@ -288,6 +303,7 @@ function setActiveSection(section) {
   }
   if (section === "projects") {
     renderProjectGrid();
+    attachProjectGrid();
   }
 }
 
@@ -297,7 +313,8 @@ function attachCertificateModal() {
     card.addEventListener("click", () => {
       const img = card.querySelector("img");
       const title = card.querySelector("h5")?.textContent || "Certificate image";
-      openImageModal(img.src, title);
+      const description = card.querySelector("p")?.textContent || "";
+      openImageModal(img.src, title, description);
     });
   });
 }
@@ -306,10 +323,11 @@ function renderProjectGrid() {
   const grid = document.getElementById("project-grid");
   if (!grid) return;
 
+  clearProjectIntervals();
   grid.innerHTML = projectData
-    .map((project) => {
+    .map((project, index) => {
       return `
-        <article class="project-card">
+        <article class="project-card project-card-clickable" data-project-index="${index}">
           <div class="project-image-wrap">
             <img src="${project.images[0]}" alt="${project.title}" />
           </div>
@@ -322,13 +340,86 @@ function renderProjectGrid() {
       `;
     })
     .join("");
+
+  const cards = grid.querySelectorAll(".project-card-clickable");
+  cards.forEach((card) => {
+    const index = Number(card.dataset.projectIndex);
+    const project = projectData[index];
+    if (!project) return;
+    card.addEventListener("click", () => openProjectModal(index, 0));
+    if (project.images.length > 1) {
+      startProjectImageCycle(card, project.images);
+    }
+  });
 }
 
+function attachProjectGrid() {
+  // Kept for compatibility if any extra project grid attachments are required later.
+}
 
-function openImageModal(src, caption) {
-  if (!imageModal || !imageModalImg || !imageModalCaption) return;
+function startProjectImageCycle(card, images) {
+  let activeIndex = 0;
+  const imgNode = card.querySelector("img");
+  if (!imgNode) return;
+
+  const interval = setInterval(() => {
+    activeIndex = (activeIndex + 1) % images.length;
+    imgNode.style.opacity = "0";
+    setTimeout(() => {
+      imgNode.src = images[activeIndex];
+      imgNode.style.opacity = "1";
+    }, 250);
+  }, 2000);
+
+  projectAutoIntervals.push(interval);
+}
+
+function clearProjectIntervals() {
+  projectAutoIntervals.forEach((interval) => clearInterval(interval));
+  projectAutoIntervals = [];
+}
+
+function openProjectModal(projectIndex, imageIndex = 0) {
+  if (!projectModal || !projectModalImage || !projectModalCaption || !projectModalDescription || !projectModalGithub) return;
+  const project = projectData[projectIndex];
+  if (!project) return;
+
+  currentProjectModalIndex = projectIndex;
+  currentProjectModalImageIndex = imageIndex;
+  projectModalImage.src = project.images[imageIndex];
+  projectModalCaption.textContent = project.title;
+  projectModalDescription.textContent = project.description;
+  projectModalGithub.href = project.github || "#";
+  projectModalGithub.style.display = project.github ? "inline-flex" : "none";
+  projectModal.classList.add("open");
+}
+
+function changeProjectModalImage(step) {
+  const project = projectData[currentProjectModalIndex];
+  if (!project || project.images.length <= 1) return;
+  currentProjectModalImageIndex = (currentProjectModalImageIndex + step + project.images.length) % project.images.length;
+  const nextSource = project.images[currentProjectModalImageIndex];
+  projectModalImage.style.opacity = "0";
+  setTimeout(() => {
+    projectModalImage.src = nextSource;
+    projectModalImage.style.opacity = "1";
+  }, 250);
+}
+
+function closeProjectModal() {
+  if (!projectModal) return;
+  projectModal.classList.remove("open");
+}
+
+function openImageModal(src, caption, description = "") {
+  if (!imageModal || !imageModalImg || !imageModalCaption || !imageModalDescription) return;
+  imageModalImg.style.opacity = "0";
   imageModalImg.src = src;
+  imageModalImg.onload = () => {
+    imageModalImg.style.opacity = "1";
+  };
   imageModalCaption.textContent = caption;
+  imageModalDescription.textContent = description;
   imageModal.classList.add("open");
 }
 
@@ -390,9 +481,34 @@ if (imageModal) {
     }
   });
 }
+if (projectModalClose) {
+  projectModalClose.addEventListener("click", closeProjectModal);
+}
+if (projectModal) {
+  projectModal.addEventListener("click", (event) => {
+    if (event.target === projectModal || event.target.dataset.closeModal !== undefined) {
+      closeProjectModal();
+    }
+  });
+}
+if (projectModalPrev) {
+  projectModalPrev.addEventListener("click", () => changeProjectModalImage(-1));
+}
+if (projectModalNext) {
+  projectModalNext.addEventListener("click", () => changeProjectModalImage(1));
+}
 window.addEventListener("keydown", (event) => {
   if (event.key === "Escape") {
     closeImageModal();
+    closeProjectModal();
+  }
+  if (projectModal && projectModal.classList.contains("open")) {
+    if (event.key === "ArrowUp") {
+      changeProjectModalImage(-1);
+    }
+    if (event.key === "ArrowDown") {
+      changeProjectModalImage(1);
+    }
   }
 });
 

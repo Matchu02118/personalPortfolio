@@ -36,9 +36,9 @@
                     </div>
                 </div>
 
-                <div class="status-pill">Bachelor of Science in Computer Engineering</div>
-                <div class="profile-actions">
-                  <a class="resume-btn" href="static/resume.pdf" target="_blank">Resume</a>
+                <!-- <div class="status-pill">Bachelor of Science in Computer Engineering</div> -->
+                <div class="profile-actions" style="display:flex; align-items:center; justify-content:center;">
+                  <a class="resume-btn" href="static/resume.pdf" target="_blank" style="font-weight: bold;">Resume</a>
                 </div>
             </div>
         </aside>
@@ -93,8 +93,34 @@
       <div class="image-modal-backdrop" data-close-modal></div>
       <div class="image-modal-content">
         <button id="image-modal-close" class="image-modal-close" aria-label="Close modal">×</button>
-        <img id="image-modal-img" src="" alt="Certificate preview" />
-        <div id="image-modal-caption" class="image-modal-caption"></div>
+        <div class="image-modal-image-column">
+          <div class="image-modal-image-wrap">
+            <img id="image-modal-img" src="" alt="Certificate preview" />
+          </div>
+        </div>
+        <div class="image-modal-details">
+          <h5 id="image-modal-caption"></h5>
+          <p id="image-modal-description" class="image-modal-description"></p>
+        </div>
+      </div>
+    </div>
+
+    <div id="project-modal" class="project-modal" role="dialog" aria-modal="true">
+      <div class="project-modal-backdrop" data-close-modal></div>
+      <div class="project-modal-content">
+        <button id="project-modal-close" class="project-modal-close" aria-label="Close project preview">×</button>
+        <div class="project-modal-image-column">
+          <button id="project-modal-prev" class="project-modal-nav project-modal-prev" aria-label="Previous image">▲</button>
+          <div class="project-modal-image-wrap">
+            <img id="project-modal-img" src="" alt="Project preview" />
+          </div>
+          <button id="project-modal-next" class="project-modal-nav project-modal-next" aria-label="Next image">▼</button>
+        </div>
+        <div class="project-modal-details">
+          <h5 id="project-modal-caption"></h5>
+          <p id="project-modal-description"></p>
+          <a id="project-modal-github" class="project-modal-github" href="#" target="_blank" rel="noreferrer noopener">🐙 GitHub Link</a>
+        </div>
       </div>
     </div>
 
