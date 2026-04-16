@@ -35,7 +35,6 @@ const sections = {
           <ul>
             <li>Robotic Projects</li>
             <li><a href="https://pi-hole.net/" target="_blank">Pi-Hole</a></li>
-            <li><a href="https://unbound.net/" target="_blank">Unbound</a></li>
           </ul>
         </article>
         <article class="skill-card">
@@ -80,6 +79,15 @@ const sections = {
             <li>Microsoft 365</li>
             <li>Canva</li>
             <li>Notion</li>
+          </ul>
+        </article>
+        <article class="skill-card">
+          <div class="skill-icon"><i class="fa-solid fa-suitcase"></i></div>
+          <h5>Software & Tools</h5>
+          <ul>
+            <li><a href="https://www.chiark.greenend.org.uk/~sgtatham/putty/" target="_blank">PuTTY</a></li>
+            <li><a href="https://syncthing.net/" target="_blank">Syncthing</a></li>
+            <li><a href="https://unbound.net/" target="_blank">Unbound</a></li>
           </ul>
         </article>
       </div>
@@ -559,11 +567,12 @@ function isMobileNavbar() {
 
 function updateTaskbarMode() {
   if (isMobileNavbar()) {
-    taskbar.classList.add("no-autohide");
-    showTaskbar();
+    taskbar.classList.add("hidden");
+    taskbar.classList.remove("show");
     clearTimeout(hideTimer);
   } else {
-    taskbar.classList.remove("no-autohide");
+    taskbar.classList.remove("hidden");
+    taskbar.classList.add("show");
     resetHideTimer();
   }
 }
@@ -574,13 +583,11 @@ function showTaskbar() {
 }
 
 function hideTaskbar() {
-  if (taskbar.classList.contains("no-autohide")) return;
   taskbar.classList.add("hidden");
   taskbar.classList.remove("show");
 }
 
 function resetHideTimer() {
-  if (taskbar.classList.contains("no-autohide")) return;
   clearTimeout(hideTimer);
   hideTimer = setTimeout(() => {
     if (!taskbar.matches(":hover")) {
@@ -589,8 +596,20 @@ function resetHideTimer() {
   }, 1400);
 }
 
+function shouldRevealTaskbarOnTouch(event) {
+  if (!event.touches || event.touches.length === 0) return false;
+  const touchY = event.touches[0].clientY;
+  return touchY > window.innerHeight - 96;
+}
+
+function handleTouchStart(event) {
+  if (shouldRevealTaskbarOnTouch(event)) {
+    showTaskbar();
+    resetHideTimer();
+  }
+}
+
 function handlePointerMove(event) {
-  if (taskbar.classList.contains("no-autohide")) return;
   if (window.innerHeight - event.clientY < 120) {
     showTaskbar();
     resetHideTimer();
@@ -603,7 +622,7 @@ function handlePointerMove(event) {
 }
 
 window.addEventListener("mousemove", handlePointerMove);
-window.addEventListener("touchstart", showTaskbar);
+window.addEventListener("touchstart", handleTouchStart, { passive: true });
 window.addEventListener("touchend", resetHideTimer);
 window.addEventListener("resize", updateTaskbarMode);
 taskbar.addEventListener("mouseenter", showTaskbar);
@@ -721,7 +740,7 @@ async function loadPDF(url) {
     pdfDoc = await pdfjsLib.getDocument(url).promise;
     pdfTotalPages.textContent = pdfDoc.numPages;
     currentPage = 1;
-    currentZoom = 1.5;
+    currentZoom = window.innerWidth <= 720 ? 1.05 : 1.5;
     
     await renderPage(1);
     pdfModal.classList.add("show");
