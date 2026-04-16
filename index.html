@@ -1,298 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Carl Mathew Estorga - Portfolio</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/e96ddb5a13.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="static/styles.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carl Mathew Estorga | Portfolio</title>
+    <link rel="stylesheet" href="static/style.css" />
 </head>
-<body class="custom-bg">
-<nav id="navbar" class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-  <div class="container-fluid">
-    <a class="navbar-brand bold ms-5" href="#">Portfolio</a>
 
-    <!-- Toggler Button -->
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
-            aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+<body>
+    <div class="page-shell">
+        <!-- EDITABLE PROFILE CARD: update your name, role, location, and email addresses here -->
+        <aside class="profile-panel">
+            <div class="profile-card">
+                <div class="avatar-ring">
+                    <div class="avatar">
+                        <!-- EDITABLE AVATAR IMAGE: replace the src below with your own picture path -->
+                        <img src="static/personalpic.jpg" alt="Carl Mathew Estorga profile picture" />
+                    </div>
+                </div>
+                <h1>Carl Mathew Estorga</h1>
+                <p class="role">Computer Engineer</p>
 
-    <!-- Collapsible Content -->
-    <div class="collapse navbar-collapse" id="navbarContent">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a href="#home" class="nav-link px-2 text-end nav-1">Home</a></li>
-        <li class="nav-item"><a href="#about" class="nav-link px-2 text-end nav-2">About Me</a></li>
-        <li class="nav-item"><a href="#skills" class="nav-link px-2 text-end nav-3">Skills</a></li>
-        <li class="nav-item"><a href="#projects" class="nav-link px-2 text-end nav-4">Projects</a></li>
-        <li class="nav-item"><a href="#education" class="nav-link px-2 text-end nav-5">Education</a></li>
-        <li class="nav-item"><a href="#certificates" class="nav-link px-2 text-end nav-6">Certificates</a></li>
-        <li class="nav-item"><a href="#contacts" class="nav-link px-2 text-end nav-7">Contact Me</a></li>
-      </ul>
+                <div class="info-group">
+                    <div class="info-row">
+                        <span class="label">Location</span>
+                        <span>Pasay City, Philippines</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="label">Email</span>
+                        <a href="mailto:estorga.carlmathew11@outlook.com">estorga.carlmathew11@outlook.com</a>
+                    </div>
+                    <div class="info-row">
+                        <span class="label">Alt Email</span>
+                        <a href="mailto:estorgacarlmathew@gmail.com">estorgacarlmathew@gmail.com</a>
+                    </div>
+                </div>
+
+                <div class="status-pill">Bachelor of Science in Computer Engineering</div>
+                <div class="profile-actions">
+                  <a class="resume-btn" href="static/resume.pdf" target="_blank">Resume</a>
+                </div>
+            </div>
+        </aside>
+        <!-- END EDITABLE PROFILE CARD -->
+
+        <main class="content-shell">
+            <section class="hero-panel">
+                <!-- EDITABLE HERO TEXT: replace title and summary with your own introduction -->
+                <div class="hero-copy">
+                    <span class="eyebrow">Portfolio</span>
+                    <h2>Computer engineering, automation, and system design.</h2>
+                    <p>
+                        I'm a BS Computer Engineering graduate with hands-on experience in microcontroller projects, Linux, system troubleshooting, and productivity tools.
+                    </p>
+                </div>
+
+                <div class="hero-actions">
+                    <button class="hero-btn active" data-section="about">About Me</button>
+                    <button class="hero-btn" data-section="projects">Projects</button>
+                </div>
+                <!-- END EDITABLE HERO TEXT -->
+            </section>
+
+            <section class="dynamic-shell">
+                <div class="dynamic-header">
+                    <div>
+                        <span class="section-badge">Active</span>
+                        <h3 id="section-title">About Me</h3>
+                    </div>
+                    <p class="section-subtitle">
+                        Move the cursor near the bottom edge to reveal the auto-hiding taskbar. Tap any section to update the content area.
+                    </p>
+                </div>
+
+                <div id="dynamic-content" class="dynamic-content"></div>
+            </section>
+        </main>
     </div>
-  </div>
-</nav>
 
-  <!-- Introduction -->
-  <section id="home" class="intro d-flex align-items-center justify-content-center" 
-           style="scroll-margin-top:90px; min-height:100vh; padding-top:70px;">
-    <div class="card text-center p-5 shadow-lg text-light" 
-         style="background-color:#1c1f23; border-radius:12px; max-width:800px;">
-      <!-- <i class="fa-regular fa-circle-user mb-4 mx-auto" style="font-size:5rem; color:#adb5bd;"></i> -->
-      <img src="static/img/pic.JPG" alt="Profile Pic" style="width:30%; height:auto; border-radius:50%;" class="mx-auto">
-      <h1 class="fw-bold mt-5">Carl Mathew Estorga</h1>
-      <h3 class="text-secondary">Computer Engineer</h3>
-      <a href="/static/resume.pdf" class="btn btn-outline-light mt-4 w-100" style="max-width:185px; margin:0 auto;">Download my resume</a>
-    </div>
-  </section>
+    <!-- EDITABLE NAVIGATION: update the labels or section targets if you want to change the DCA buttons -->
+    <nav id="taskbar" class="taskbar show">
+        <button class="taskbar-btn active" data-section="about"><span>🏠</span><span>About</span></button>
+        <button class="taskbar-btn" data-section="education"><span>🎓</span><span>Education</span></button>
+        <button class="taskbar-btn" data-section="projects"><span>🗂️</span><span>Projects</span></button>
+        <button class="taskbar-btn" data-section="certificates"><span>📜</span><span>Certificates</span></button>
+        <button class="taskbar-btn" data-section="skills"><span>🧠</span><span>Skills</span></button>
+        <button class="taskbar-btn" data-section="contact"><span>✉️</span><span>Contact</span></button>
+    </nav>
+    <!-- END EDITABLE NAVIGATION -->
 
-  <!-- About Me -->
-  <section id="about" class="section-offset">
-    <div class="d-flex align-items-center justify-content-center">
-            <i class="fa-solid fa-address-card mt-3" style="font-size:4rem;"></i>
-            <h1 class="mt-4 mx-3">About <span style="color:lightblue">Me</span></h1>
-    </div>
-    <div class="container d-flex justify-content-center mt-3">
-      <div class="card text-light p-4 shadow-lg"
-          style="background-color:#1c1f23; max-width:800px; border-radius:12px;">
-        <p class="lead mb-3" style="text-align:justify;">
-          I'm a Bachelor of Science in Computer Engineering graduate with a passion for software maintenance,
-          backed by a strong foundation in circuit diagram and flowchart design. I'm knowledgeable in
-          Python, HTML, and CSS, with hands-on experience in microcontroller programming, circuit
-          analysis, Linux OS, and software troubleshooting. Proficient in Microsoft 365 and Google Workspace
-          for efficient documentation, data management, and collaborative work.
-        </p>
+    <div id="image-modal" class="image-modal" role="dialog" aria-modal="true">
+      <div class="image-modal-backdrop" data-close-modal></div>
+      <div class="image-modal-content">
+        <button id="image-modal-close" class="image-modal-close" aria-label="Close modal">×</button>
+        <img id="image-modal-img" src="" alt="Certificate preview" />
+        <div id="image-modal-caption" class="image-modal-caption"></div>
       </div>
     </div>
-  </section> 
 
-  <!-- Skills -->
-  <section id="skills" class="section-offset py-5">
-    <div class="text-center mb-4">
-      <h1><span class="my-text">My</span> <span class="skills-text" style="color:#ff3131">Skills</span></h1>
-    </div>
-
-    <div class="container">
-      <div class="row g-4 justify-content-center">
-        <!-- Skill Card -->
-        <div class="col-md-4">
-          <div class="skillItem h-100 p-3 d-flex align-items-center rounded shadow-lg">
-            <i class="fa-brands fa-raspberry-pi"></i>
-            <div class="ms-3">
-              <h4 class="mb-1">Raspberry Pi</h4>
-              <ul>
-                <li>Robotic Projects</li>
-                <li><a href="https://pi-hole.net/" target="_blank" style="text-decoration: none; color:#00bf63">Pi-Hole</a></li>
-                <li><a href="https://unbound.net/" target="_blank" style="text-decoration: none; color:#00bf63">Unbound</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="skillItem h-100 p-3 d-flex align-items-center rounded shadow-lg">
-            <i class="fa-brands fa-linux"></i>
-            <div class="ms-3">
-              <h4 class="mb-1">Linux</h4>
-              <ul>
-                <li>Installation</li>
-                <li>Configuration</li>
-                <li>Package Management</li>
-                <li>Cron Scheduling</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="skillItem h-100 p-3 d-flex align-items-center rounded shadow-lg">
-            <i class="fa-brands fa-python"></i>
-            <div class="ms-3">
-              <h4 class="mb-1">Python</h4>
-              <ul>
-                <li>Desktop applications</li>
-                <li>Machine Learning</li>
-                <li>Automation</li>
-                <li>Scripting</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="skillItem h-100 p-3 d-flex align-items-center rounded shadow-lg">
-            <i class="fa-solid fa-database"></i>
-            <div class="ms-3">
-              <h4 class="mb-1">SQL</h4>
-              <ul>
-                <li>Database Design</li>
-                <li>Query Optimization</li>
-                <li>Data Manipulation</li>
-              </ul>
-            </div>
-          </div>
-        </div>      
-        <div class="col-md-4">
-          <div class="skillItem h-100 p-3 d-flex align-items-center rounded shadow-lg">
-            <i class="fa-solid fa-terminal"></i>
-            <div class="ms-3">
-              <h4 class="mb-1">CLI Tools</h4>
-              <ul>
-                <li><a href="https://imagemagick.org/" target="_blank" style="text-decoration: none; color:#00bf63">Image Magick</a></li>
-                <li><a href="https://ffmpeg.org/" target="_blank" style="text-decoration: none; color:#00bf63">ffmpeg</a></li>
-                <li><a href="https://htop.dev/" target="_blank" style="text-decoration: none; color:#00bf63">htop</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-          <div class="col-md-4">
-          <div class="skillItem h-100 p-3 d-flex align-items-center rounded shadow-lg">
-            <i class="fa-solid fa-suitcase"></i>
-            <div class="ms-3">
-              <h4 class="mb-1">Productivity Apps</h4>
-              <ul>
-                <li>Google Workspace</li>
-                <li>Microsoft 365</li>
-                <li>Canva</li>
-                <li>Notion</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Projects -->
-  <section id="projects" class="section-offset py-5">
-    <div class="d-flex align-items-center justify-content-center mb-4">
-      <h1>My <span style="color:#00bf63">Projects</span></h1>
-    </div>
-
-    <div class="project-carousel d-flex align-items-center justify-content-center">
-
-      <button class="carousel-arrow left" onclick="prevProject()">&#10094;</button>
-      <div class="project-display d-flex">
-      </div>
-      <button class="carousel-arrow right" onclick="nextProject()">&#10095;</button>
-    </div>
-</section>
-
-  <!-- Education -->
-  <section id="education" class="section-offset" style="scroll-margin-top:20px;">
-    <div class="d-flex align-items-center justify-content-center">
-      <h1>Educ<span style="color:#8c52ff">ation</span></h1>
-    </div>
-    <div class="container mt-3 d-flex justify-content-between align-items-center" style="border-radius:30px; width:80%;">
-      <h4 class="fw-bold">University of Santo Tomas-Legazpi<br><span class="fw-light" style="font-style: italic; font-size: 14px;">Bachelor of Science in Computer Engineering</span></h4>
-      <h4 class="fw-light text-align-right">2021 to 2025</h4>
-    </div>
-    <div class="container d-flex align-items-center mt-2 flex-column text-justify" style="border-radius: 15px; background-color:#2c2f33; width:80%;">
-      <p>During my years studying Computer Engineering, I developed a strong foundation in both hardware and software disciplines. My interest in Linux began when our instructor introduced us to system and network administration tasks—an experience that sparked my appreciation for its efficiency and reliability in server and security environments. I also gained practical experience working with Arduino-based projects such as an obstacle-avoiding robot and a flame detection system.</p>
-      <p>For my thesis, my partner and I developed a robotic device programmed in Python and trained with YOLOv5 custom datasets to identify and segregate garbage, combining machine learning and robotics into a practical environmental solution. Although hardware wasn’t my strongest area, I contributed to electrical projects like a multi-voltage power supply and an audio amplifier by assisting in schematic design and analysis. These projects honed my understanding of logic circuit diagrams and reinforced my analytical problem-solving skills. I also excelled in number system computations (Binary, Octal, and Hexadecimal), which strengthened my grasp of digital systems and low-level computer operations.</p>
-    </div>
-  </section>
-
-  <!-- Certificates -->
-  <section id="certificates" class="section-offset" style="scroll-margin-top:20px;">
-    <div class="d-flex align-items-center justify-content-center">
-      <h1>My <span style="color:#ffde59">Certificates</span></h1>
-    </div>
-      <div class="container mt-4">
-    <div class="row g-4 justify-content-center">  
-
-      <div class="col-md-4">
-        <div class="certificate-card position-relative overflow-hidden">
-          <img id="project1-img" src="static/img/certificates/1.png" class="img-fluid w-100 fade-anim" alt="Certificate 1">
-          <div class="certificate-overlay text-light p-3">
-            <h5>Certificate of Participation: Webinar on Digital Opportunities using ICT</h5>
-            <div class="d-flex project-src align-items-center justify-content-center">
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-4">
-        <div class="certificate-card position-relative overflow-hidden">
-          <img id="project2-img" src="static/img/certificates/2.png" class="img-fluid w-100 fade-anim" alt="Certificate 2">
-          <div class="certificate-overlay text-light p-3">
-            <h5>Certificate of Participation: AIVolution - AI Revolution: Unlocking the Potential of Tomorrow</h5>
-            <div class="d-flex project-src align-items-center justify-content-center">
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-4">
-        <div class="certificate-card position-relative overflow-hidden">
-          <img src="static/img/certificates/3.png" class="img-fluid w-100" alt="Certificate 3">
-          <div class="certificate-overlay text-light p-3">
-            <h5>Certificate of Completion: TESDA - Setting Up Computer Networks</h5>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-4">
-        <div class="certificate-card position-relative overflow-hidden">
-          <img src="static/img/certificates/4.png" class="img-fluid w-100" alt="Certificate 4">
-          <div class="certificate-overlay text-light p-3">
-            <h5>FreeCodeCamp - Responsive Web Design</h5>
-            <div class="d-flex project-src align-items-center justify-content-center">
-              <a href="https://freecodecamp.org/certification/CMathchu11/responsive-web-design" target="_blank">Certificate Link</a>
-              <i class="fa-solid fa-arrow-up-right-from-square link-icon"></i>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-4">
-        <div class="certificate-card position-relative overflow-hidden">
-          <img src="static/img/certificates/5.png" class="img-fluid w-100" alt="Certificate 5">
-          <div class="certificate-overlay text-light p-3">
-            <h5>SoloLearn - Introduction to Python</h5>
-          </div>
-        </div>
-      </div>    
-    </div>
-  </div>
-  </section>
-
-  <!-- Contact Me -->
-  <section id="contacts" class="section-offset" style="scroll-margin-top:12px;">
-    <div class="d-flex align-items-center justify-content-center">
-      <h1>Contact <span style="color:orange">Me</span></h1>
-    </div>
-
-    <!-- E-Mail Form -->
-    <div class="form-wrapper mx-auto mt-2">
-      <form class="contact-form" action="https://formsubmit.co/estorga.carlmathew11@outlook.com" method="POST">
-        
-        <!-- Hidden Controls -->
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_template" value="table">
-
-        <!-- Form Fields -->
-        <div class="d-flex mb-3">
-          <input type="text" name="name" placeholder="Name (Optional)" class="form-input w-50">
-          <input type="email" name="email" placeholder="E-Mail Address" class="form-input ms-2 w-50" required>
-        </div>
-        <input type="text" name="subject" placeholder="Email Subject" class="form-input mb-1" required>
-        <textarea name="message" placeholder="Message Body" rows="4" class="form-textarea mb-3" required></textarea>
-        <button type="submit" class="submit-btn">Submit E-Mail</button>
-      </form>
-    </div>
-
-    
-    <!-- Social links -->
-    <div class="d-flex justify-content-center gap-3 mt-4">
-      <a href="https://web.facebook.com/CME811/" target="_blank"><i class="social fa-brands fa-facebook" style="font-size:3rem;"></i></a>
-      <a href="https://linkedin.com/in/carl-mathew-estorga-163855372" target="_blank"><i class="social fa-brands fa-linkedin" style="font-size:3rem;"></i></a>
-      <a href="https://github.com/Matchu02118" target="_blank"><i class="social fa-brands fa-github" style="font-size:3rem;"></i></a>
-    </div>
-  </section>
-
-  <script src="./static/scripts.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="static/script.js" defer></script>
 </body>
 </html>
