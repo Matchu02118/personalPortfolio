@@ -12,7 +12,7 @@ const sections = {
         <div class="about-text">
           <h4>About Me</h4>
           <p style="text-align: justify;">
-            I'm a Bachelor of Science in Computer Engineering graduate with a passion for software maintenance,
+            I'm a <span style="font-weight:bold;">Bachelor of Science in Computer Engineering</span> graduate with a passion for software maintenance,
             backed by a strong foundation in circuit diagram and flowchart design. I'm knowledgeable in Python,
             HTML, and CSS, with hands-on experience in microcontroller programming, circuit analysis, Linux OS,
             and software troubleshooting. Proficient in Microsoft 365 and Google Workspace for efficient
@@ -30,7 +30,7 @@ const sections = {
     content: `
       <div class="skill-grid">
         <article class="skill-card">
-          <div class="skill-icon">🍓</div>
+          <div class="skill-icon"><i class="fa-brands fa-raspberry-pi"></i></div>
           <h5>Raspberry Pi</h5>
           <ul>
             <li>Robotic Projects</li>
@@ -39,7 +39,7 @@ const sections = {
           </ul>
         </article>
         <article class="skill-card">
-          <div class="skill-icon">🐧</div>
+          <div class="skill-icon"><i class="fa-brands fa-linux"></i></div>
           <h5>Linux</h5>
           <ul>
             <li>Installation</li>
@@ -47,7 +47,7 @@ const sections = {
           </ul>
         </article>
         <article class="skill-card">
-          <div class="skill-icon">🐍</div>
+          <div class="skill-icon"><i class="fa-brands fa-python"></i></div>
           <h5>Python</h5>
           <ul>
             <li>Machine Learning</li>
@@ -56,7 +56,7 @@ const sections = {
           </ul>
         </article>
         <article class="skill-card">
-          <div class="skill-icon">🗄️</div>
+          <div class="skill-icon"><i class="fa-solid fa-database"></i></div>
           <h5>SQL</h5>
           <ul>
             <li>Database Design</li>
@@ -65,7 +65,7 @@ const sections = {
           </ul>
         </article>
         <article class="skill-card">
-          <div class="skill-icon">⌨️</div>
+          <div class="skill-icon"><i class="fa-solid fa-terminal"></i></div>
           <h5>CLI Tools</h5>
           <ul>
             <li><a href="https://imagemagick.org/" target="_blank">Image Magick</a></li>
@@ -73,7 +73,7 @@ const sections = {
           </ul>
         </article>
         <article class="skill-card">
-          <div class="skill-icon">💼</div>
+          <div class="skill-icon"><i class="fa-solid fa-suitcase"></i></div>
           <h5>Productivity Apps</h5>
           <ul>
             <li>Google Workspace</li>
@@ -88,6 +88,43 @@ const sections = {
   projects: {
     title: "Projects",
     content: `
+      <style>
+        .project-filter-container { margin-bottom: 20px; }
+        .project-filter-bar { 
+          display: flex; 
+          align-items: center; 
+          justify-content: space-between; 
+          cursor: pointer;
+          padding: 10px 15px;
+          background: rgba(255,255,255,0.05);
+          border-radius: 8px;
+          transition: background 0.2s ease;
+        }
+        .project-filter-bar:hover { background: rgba(255,255,255,0.1); }
+        .filter-toggle-btn {
+          background: none;
+          border: none;
+          color: inherit;
+          font-size: 1rem;
+          transition: transform 0.3s ease;
+          cursor: pointer;
+        }
+        .filter-toggle-btn.expanded { transform: rotate(180deg); }
+        .project-filter-list {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 8px;
+          overflow: hidden;
+          transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease, margin 0.3s ease;
+          max-height: 0;
+          opacity: 0;
+        }
+        .project-filter-list.expanded {
+          max-height: 500px;
+          opacity: 1;
+          margin-top: 15px;
+        }
+      </style>
           <div class="content-block">
         <h4>My Projects</h4>
         <p>
@@ -95,8 +132,13 @@ const sections = {
           robotics, and calculator utilities.
         </p>
       </div>
-      <div class="project-filter-bar">
-        <span class="project-filter-label">Filter by skill</span>
+      <div class="project-filter-container">
+        <div id="filter-header" class="project-filter-bar">
+          <span class="project-filter-label">Filter by skill</span>
+          <button id="filter-toggle" class="filter-toggle-btn" aria-label="Toggle filters">
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+        </div>
         <div id="project-filter-list" class="project-filter-list"></div>
       </div>
       <div id="project-grid" class="project-grid"></div>
@@ -220,12 +262,13 @@ const sections = {
   },
 };
 
+// note to self: add future project entries here
 const projectData = [
   {
     title: "AI Camera-Integrated Waste Collection and Segregation System Using Raspberry Pi",
     description: "Raspberry Pi powered waste collection system that detects and sorts recyclable items.",
     github: "https://github.com/Matchu02118/garbageDetectionSegregation",
-    tags: ["Python", "Machine Learning", "YOLOv5", "Raspberry Pi", "Robotics", "Electronics"],
+    tags: ["Python", "Machine Learning", "YOLOv5", "Raspberry Pi", "Robotics", "Embedded Systems"],
     images: [
       "static/img/projects/1.jpg",
       "static/img/projects/1-b.jpg",
@@ -247,13 +290,13 @@ const projectData = [
   {
     title: "Obstacle Avoiding Robot",
     description: "Arduino mobile robot with sensors for automated obstacle detection and navigation.",
-    tags: ["Arduino", "Electronics", "Robotics"],
+    tags: ["Embedded Systems", "Robotics"],
     images: ["static/img/projects/4.jpg"]
   },
   {
     title: "Scientific Calculator App",
     description: "A MATLAB-based Casio fx-100MS style calculator for math and engineering workflows.",
-    tags: ["MATLAB", "App Development"],
+    tags: ["App Development"],
     images: ["static/img/projects/5.png"]
   },
   {
@@ -261,6 +304,15 @@ const projectData = [
     description: "Network calculator that converts IP and subnet mask values into decimal and binary results.",
     tags: ["Python", "PyQt", "App Development", "Networking"],
     images: ["static/img/projects/3.jpg"]
+  },
+  {
+    title: "Daily Time Record",
+    description: "The Excel spreadsheet I created to calculate hours I have left on my On-The-Job Training (OJT) program, which I also used to track my attendance and performance during the internship.",
+    tags: ["Microsoft Excel", "Office"],
+    images: [
+      "static/img/projects/6.jpg",
+      "static/img/projects/6-b.jpg",
+    ]
   }
 ];
 
@@ -288,14 +340,20 @@ let projectAutoIntervals = [];
 let currentProjectModalIndex = 0;
 let currentProjectModalImageIndex = 0;
 let activeProjectFilter = "All";
+let isFilterExpanded = false;
 
 function setActiveSection(section) {
   sectionTitle.textContent = sections[section].title;
   contentWrapper.innerHTML = sections[section].content;
-  contentWrapper.classList.add("fade-in");
-  window.requestAnimationFrame(() => {
+
+  // Apply fade-in animation conditionally, excluding 'projects' and 'certificates'
+  if (section !== "projects" && section !== "certificates") {
+    contentWrapper.classList.remove("fade-in"); // Ensure animation can trigger again
+    contentWrapper.offsetHeight; // Trigger reflow
+    contentWrapper.classList.add("fade-in");
+  } else {
     contentWrapper.classList.remove("fade-in");
-  });
+  }
 
   taskbarButtons.forEach((button) => {
     button.classList.toggle("active", button.dataset.section === section);
@@ -326,7 +384,24 @@ function setProjectFilter(tag) {
 
 function renderProjectFilterButtons() {
   const filterList = document.getElementById("project-filter-list");
+  const toggleBtn = document.getElementById("filter-toggle");
+  const filterHeader = document.getElementById("filter-header");
+
   if (!filterList) return;
+
+  if (toggleBtn && filterHeader) {
+    // Sync visual state with variable
+    if (isFilterExpanded) {
+      filterList.classList.add("expanded");
+      toggleBtn.classList.add("expanded");
+    }
+    // Handle toggle click on the whole header bar
+    filterHeader.onclick = () => {
+      isFilterExpanded = !isFilterExpanded;
+      filterList.classList.toggle("expanded", isFilterExpanded);
+      toggleBtn.classList.toggle("expanded", isFilterExpanded);
+    };
+  }
 
   const tags = ["All", ...getProjectTags()];
   filterList.innerHTML = tags
@@ -543,6 +618,9 @@ if (imageModal) {
       closeImageModal();
     }
   });
+}
+if (imageModalClose) {
+  imageModalClose.addEventListener("click", closeImageModal);
 }
 if (projectModalClose) {
   projectModalClose.addEventListener("click", closeProjectModal);
