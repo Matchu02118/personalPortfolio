@@ -225,6 +225,11 @@ const sections = {
           <h5>SoloLearn Introduction to Python</h5>
           <p>Python programming certificate for beginner-level development and automation.</p>
         </article>
+        <article class="project-card certificate-clickable">
+          <img src="static/img/certificates/6.png" alt="UST-L OJT Certificate" />
+          <h5>University of Santo Tomas-Legazpi OJT Certificate</h5>
+          <p>On-the-job training certificate from University of Santo Tomas-Legazpi.</p>
+        </article>
       </div>
     `,
   },
