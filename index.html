@@ -6,21 +6,22 @@
     <title>Carl Mathew Estorga | Portfolio</title>
     <link rel="stylesheet" href="static/style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="shortcut icon" href="/static/favicon/favicon.ico" type="image/x-icon">
 </head>
 
 <body>
     <div class="page-shell">
-        <!-- EDITABLE PROFILE CARD: update your name, role, location, and email addresses here -->
+        <!-- E PROFILE CARD: update your name, role, location, and email addresses here -->
         <aside class="profile-panel">
             <div class="profile-card">
                 <div class="avatar-ring">
                     <div class="avatar">
-                        <!-- EDITABLE AVATAR IMAGE: replace the src below with your own picture path -->
+                        <!-- E AVATAR IMAGE: replace the src below with your own picture path -->
                         <img src="static/personalpic.jpg" alt="Carl Mathew Estorga profile picture" />
                     </div>
                 </div>
                 <h1>Carl Mathew Estorga</h1>
-                <p class="role">Computer Engineer</p>
+                <p class="role">Computer Engineer • System Admin • Data Analyst</p>
                 <div class="profile-socials">
                     <a href="https://web.facebook.com/CME811/" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
                     <a href="https://linkedin.com/in/carl-mathew-estorga-163855372" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
@@ -43,11 +44,11 @@
                 </div>
             </div>
         </aside>
-        <!-- END EDITABLE PROFILE CARD -->
+        <!-- END E PROFILE CARD -->
 
         <main class="content-shell">
             <section class="hero-panel">
-                <!-- EDITABLE HERO TEXT: replace title and summary with your own introduction -->
+                <!-- E HERO TEXT: replace title and summary with your own introduction -->
                 <div class="hero-copy">
                     <span class="eyebrow">Portfolio</span>
                     <h2>Computer engineering, automation, and system design.</h2>
@@ -61,7 +62,7 @@
                     <button class="hero-btn" data-section="projects">Projects</button>
                     <a class="resume-btn" href="static/resume.pdf" target="_blank" style="font-weight: bold;">Resume</a>
                 </div>
-                <!-- END EDITABLE HERO TEXT -->
+                <!-- END E HERO TEXT -->
             </section>
 
             <section class="dynamic-shell">
@@ -71,7 +72,7 @@
                         <h3 id="section-title">About Me</h3>
                     </div>
                     <p class="section-subtitle">
-                        Move the cursor near the bottom edge to reveal the auto-hiding taskbar. Tap any section to update the content area.
+                        Move the cursor near the bottom edge to reveal the auto-hiding taskbar, then tap any section to update the dynamic content area.
                     </p>
                 </div>
 
@@ -80,7 +81,7 @@
         </main>
     </div>
 
-    <!-- EDITABLE NAVIGATION: update the labels or section targets if you want to change the DCA buttons -->
+    <!-- E NAVIGATION: update the labels or section targets if you want to change the DCA buttons -->
     <nav id="taskbar" class="taskbar show">
         <button class="taskbar-btn active" data-section="about"><span>🏠</span><span>About</span></button>
         <button class="taskbar-btn" data-section="education"><span>🎓</span><span>Education</span></button>
@@ -89,7 +90,7 @@
         <button class="taskbar-btn" data-section="skills"><span>🧠</span><span>Skills</span></button>
         <button class="taskbar-btn" data-section="contact"><span>✉️</span><span>Contact</span></button>
     </nav>
-    <!-- END EDITABLE NAVIGATION -->
+    <!-- END E NAVIGATION -->
 
     <div id="image-modal" class="image-modal" role="dialog" aria-modal="true">
       <div class="image-modal-backdrop" data-close-modal></div>
@@ -120,8 +121,9 @@
         </div>
         <div class="project-modal-details">
           <h5 id="project-modal-caption"></h5>
+          <div id="project-modal-tags" class="project-modal-tags"></div>
           <p id="project-modal-description"></p>
-          <a id="project-modal-github" class="project-modal-github" href="#" target="_blank" rel="noreferrer noopener">🐙 GitHub Link</a>
+          <a id="project-modal-github" class="project-modal-github" href="#" target="_blank" rel="noreferrer noopener">GitHub Link</a>
         </div>
       </div>
     </div>

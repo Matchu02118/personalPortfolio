@@ -88,12 +88,16 @@ const sections = {
   projects: {
     title: "Projects",
     content: `
-      <div class="content-block">
+          <div class="content-block">
         <h4>My Projects</h4>
         <p>
           A selection of applications and hardware projects from my portfolio, including file organizers, automation tools,
           robotics, and calculator utilities.
         </p>
+      </div>
+      <div class="project-filter-bar">
+        <span class="project-filter-label">Filter by skill</span>
+        <div id="project-filter-list" class="project-filter-list"></div>
       </div>
       <div id="project-grid" class="project-grid"></div>
     `,
@@ -221,6 +225,7 @@ const projectData = [
     title: "AI Camera-Integrated Waste Collection and Segregation System Using Raspberry Pi",
     description: "Raspberry Pi powered waste collection system that detects and sorts recyclable items.",
     github: "https://github.com/Matchu02118/garbageDetectionSegregation",
+    tags: ["Python", "Machine Learning", "YOLOv5", "Raspberry Pi", "Robotics", "Electronics"],
     images: [
       "static/img/projects/1.jpg",
       "static/img/projects/1-b.jpg",
@@ -232,6 +237,7 @@ const projectData = [
     title: "File Organizer App",
     description: "Desktop application for sorting and managing files by type and folder.",
     github: "https://github.com/Matchu02118/file_organizer",
+    tags: ["Python", "PyQt", "App Development"],
     images: [
       "static/img/projects/2.jpg",
       "static/img/projects/2-b.jpg",
@@ -241,16 +247,19 @@ const projectData = [
   {
     title: "Obstacle Avoiding Robot",
     description: "Arduino mobile robot with sensors for automated obstacle detection and navigation.",
+    tags: ["Arduino", "Electronics", "Robotics"],
     images: ["static/img/projects/4.jpg"]
   },
   {
     title: "Scientific Calculator App",
     description: "A MATLAB-based Casio fx-100MS style calculator for math and engineering workflows.",
+    tags: ["MATLAB", "App Development"],
     images: ["static/img/projects/5.png"]
   },
   {
     title: "IP Subnet Calculator",
     description: "Network calculator that converts IP and subnet mask values into decimal and binary results.",
+    tags: ["Python", "PyQt", "App Development", "Networking"],
     images: ["static/img/projects/3.jpg"]
   }
 ];
@@ -268,6 +277,7 @@ const imageModalClose = document.getElementById("image-modal-close");
 const projectModal = document.getElementById("project-modal");
 const projectModalImage = document.getElementById("project-modal-img");
 const projectModalCaption = document.getElementById("project-modal-caption");
+const projectModalTags = document.getElementById("project-modal-tags");
 const projectModalDescription = document.getElementById("project-modal-description");
 const projectModalGithub = document.getElementById("project-modal-github");
 const projectModalPrev = document.getElementById("project-modal-prev");
@@ -277,6 +287,7 @@ let hideTimer = null;
 let projectAutoIntervals = [];
 let currentProjectModalIndex = 0;
 let currentProjectModalImageIndex = 0;
+let activeProjectFilter = "All";
 
 function setActiveSection(section) {
   sectionTitle.textContent = sections[section].title;
@@ -297,9 +308,40 @@ function setActiveSection(section) {
     attachCertificateModal();
   }
   if (section === "projects") {
+    renderProjectFilterButtons();
     renderProjectGrid();
     attachProjectGrid();
   }
+}
+
+function getProjectTags() {
+  return Array.from(new Set(projectData.flatMap((project) => project.tags || []))).sort();
+}
+
+function setProjectFilter(tag) {
+  activeProjectFilter = tag || "All";
+  renderProjectFilterButtons();
+  renderProjectGrid();
+}
+
+function renderProjectFilterButtons() {
+  const filterList = document.getElementById("project-filter-list");
+  if (!filterList) return;
+
+  const tags = ["All", ...getProjectTags()];
+  filterList.innerHTML = tags
+    .map(
+      (tag) => `
+        <button type="button" class="project-filter-button ${activeProjectFilter === tag ? "active" : ""}" data-filter="${tag}">
+          ${tag}
+        </button>
+      `
+    )
+    .join("");
+
+  filterList.querySelectorAll("button").forEach((button) => {
+    button.addEventListener("click", () => setProjectFilter(button.dataset.filter));
+  });
 }
 
 function attachCertificateModal() {
@@ -319,22 +361,30 @@ function renderProjectGrid() {
   if (!grid) return;
 
   clearProjectIntervals();
-  grid.innerHTML = projectData
-    .map((project, index) => {
-      return `
-        <article class="project-card project-card-clickable" data-project-index="${index}">
-          <div class="project-image-wrap">
-            <img src="${project.images[0]}" alt="${project.title}" />
-          </div>
-          <h5>${project.title}</h5>
-          <p>${project.description}</p>
-          ${project.github ? `
-            <p class="muted">GitHub available for this project.</p>
-          ` : ""}
-        </article>
-      `;
-    })
-    .join("");
+  const filteredProjects =
+    activeProjectFilter === "All"
+      ? projectData
+      : projectData.filter((project) => (project.tags || []).includes(activeProjectFilter));
+
+  grid.innerHTML = filteredProjects.length
+    ? filteredProjects
+        .map((project) => {
+          const originalIndex = projectData.indexOf(project);
+          return `
+            <article class="project-card project-card-clickable" data-project-index="${originalIndex}">
+              <div class="project-image-wrap">
+                <img src="${project.images[0]}" alt="${project.title}" />
+              </div>
+              <h5>${project.title}</h5>
+              <p>${project.description}</p>
+              ${project.github ? `
+                <p class="muted">GitHub available for this project.</p>
+              ` : ""}
+            </article>
+          `;
+        })
+        .join("")
+    : `<div class="empty-state">No matching projects found. Try another filter or select All.</div>`;
 
   const cards = grid.querySelectorAll(".project-card-clickable");
   cards.forEach((card) => {
@@ -383,6 +433,9 @@ function openProjectModal(projectIndex, imageIndex = 0) {
   currentProjectModalImageIndex = imageIndex;
   projectModalImage.src = project.images[imageIndex];
   projectModalCaption.textContent = project.title;
+  projectModalTags.innerHTML = (project.tags || [])
+    .map((tag) => `<span class="project-modal-tag">${tag}</span>`)
+    .join("");
   projectModalDescription.textContent = project.description;
   projectModalGithub.href = project.github || "#";
   projectModalGithub.style.display = project.github ? "inline-flex" : "none";
