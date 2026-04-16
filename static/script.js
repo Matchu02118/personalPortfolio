@@ -212,11 +212,6 @@ const sections = {
         <textarea name="message" placeholder="Message Body" rows="4" class="form-textarea" required></textarea>
         <button type="submit" class="submit-button">Submit E-Mail</button>
       </form>
-      <div class="contact-links">
-        <a href="https://web.facebook.com/CME811/" target="_blank">Facebook</a>
-        <a href="https://linkedin.com/in/carl-mathew-estorga-163855372" target="_blank">LinkedIn</a>
-        <a href="https://github.com/Matchu02118" target="_blank">GitHub</a>
-      </div>
     `,
   },
 };

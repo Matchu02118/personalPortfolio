@@ -104,6 +104,24 @@ a {
   font-size: 0.98rem;
 }
 
+.profile-socials {
+  display: flex;
+  justify-content: center;
+  gap: 1.25rem;
+  margin-bottom: 1.8rem;
+}
+
+.profile-socials a {
+  font-size: 1.4rem;
+  color: var(--text-muted);
+  transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275), color 0.25s ease;
+}
+
+.profile-socials a:hover {
+  color: var(--accent);
+  transform: translateY(-4px) scale(1.1);
+}
+
 .info-group {
   display: grid;
   gap: 1rem;
@@ -515,6 +533,15 @@ a {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1rem;
+  grid-auto-rows: auto;
+}
+
+.certificate-grid .project-card img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 18px;
+  max-height: 220px;
 }
 
 .certificate-clickable {
@@ -1004,7 +1031,8 @@ a {
   .about-grid,
   .contact-grid,
   .skill-grid,
-  .project-grid {
+  .project-grid,
+  .certificate-grid {
     grid-template-columns: 1fr;
   }
 
@@ -1036,10 +1064,22 @@ a {
     right: 1rem;
     bottom: 1rem;
     width: auto;
+    max-width: calc(100vw - 2rem);
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.55rem;
+  }
+
+  .taskbar.show,
+  .taskbar.hidden {
+    transform: none !important;
+    opacity: 1 !important;
   }
 
   .taskbar-btn {
-    flex: 1;
+    flex: 1 1 45%;
+    min-width: 0;
     justify-content: center;
+    padding: 0.85rem 0.85rem;
   }
 }
