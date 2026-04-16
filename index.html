@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="static/style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     <link rel="shortcut icon" href="/static/favicon/favicon.ico" type="image/x-icon">
+    <!-- PDF.js for in-browser PDF viewing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
 </head>
 
 <body>
@@ -58,9 +60,7 @@
                 </div>
 
                 <div class="hero-actions">
-                    <button class="hero-btn active" data-section="about">About Me</button>
-                    <button class="hero-btn" data-section="projects">Projects</button>
-                    <a class="resume-btn" href="static/resume.pdf" target="_blank" style="font-weight: bold;">Resume</a>
+                    <a class="resume-btn" href="#" id="view-resume-btn" style="font-weight: bold;">View Resume</a>
                 </div>
                 <!-- END E HERO TEXT -->
             </section>
@@ -124,6 +124,33 @@
           <div id="project-modal-tags" class="project-modal-tags"></div>
           <p id="project-modal-description"></p>
           <a id="project-modal-github" class="project-modal-github" href="#" target="_blank" rel="noreferrer noopener">GitHub Link</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- PDF Viewer Modal -->
+    <div id="pdf-modal" class="pdf-modal" role="dialog" aria-modal="true">
+      <div class="pdf-modal-backdrop" data-close-modal></div>
+      <div class="pdf-modal-content">
+        <div class="pdf-modal-header">
+          <h5>Resume</h5>
+          <div class="pdf-modal-controls">
+            <button id="pdf-zoom-out-btn" class="pdf-control-btn" aria-label="Zoom out" title="Zoom Out">
+              <i class="fa-solid fa-minus"></i>
+            </button>
+            <span id="pdf-page-info" class="pdf-page-info">Page <span id="pdf-current-page">1</span> of <span id="pdf-total-pages">0</span></span>
+            <button id="pdf-zoom-in-btn" class="pdf-control-btn" aria-label="Zoom in" title="Zoom In">
+              <i class="fa-solid fa-plus"></i>
+            </button>
+            <a id="pdf-download-btn" class="pdf-control-btn" aria-label="Download PDF" title="Download" href="static/resume.pdf" download>
+              <i class="fa-solid fa-download"></i>
+            </a>
+            <button id="pdf-close-btn" class="pdf-close-btn" aria-label="Close">×</button>
+          </div>
+        </div>
+        <div class="pdf-modal-viewer">
+          <canvas id="pdf-canvas"></canvas>
+          <div id="pdf-loading" class="pdf-loading">Loading PDF...</div>
         </div>
       </div>
     </div>
