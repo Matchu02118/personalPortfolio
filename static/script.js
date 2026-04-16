@@ -358,14 +358,9 @@ function setActiveSection(section) {
   sectionTitle.textContent = sections[section].title;
   contentWrapper.innerHTML = sections[section].content;
 
-  // Apply fade-in animation conditionally, excluding 'projects' and 'certificates'
-  if (section !== "projects" && section !== "certificates") {
-    contentWrapper.classList.remove("fade-in"); // Ensure animation can trigger again
-    contentWrapper.offsetHeight; // Trigger reflow
-    contentWrapper.classList.add("fade-in");
-  } else {
-    contentWrapper.classList.remove("fade-in");
-  }
+  contentWrapper.classList.remove("fade-in");
+  void contentWrapper.offsetHeight; // Force reflow
+  contentWrapper.classList.add("fade-in");
 
   taskbarButtons.forEach((button) => {
     button.classList.toggle("active", button.dataset.section === section);
@@ -691,12 +686,14 @@ const pdfCurrentPage = document.getElementById("pdf-current-page");
 const pdfTotalPages = document.getElementById("pdf-total-pages");
 const pdfZoomInBtn = document.getElementById("pdf-zoom-in-btn");
 const pdfZoomOutBtn = document.getElementById("pdf-zoom-out-btn");
+const pdfPrevBtn = document.getElementById("pdf-prev-btn");
+const pdfNextBtn = document.getElementById("pdf-next-btn");
 const pdfCloseBtn = document.getElementById("pdf-close-btn");
 const viewResumeBtn = document.getElementById("view-resume-btn");
 
 let pdfDoc = null;
 let currentPage = 1;
-let currentZoom = 1.5;
+let currentZoom = 1.2;
 const minZoom = 0.8;
 const maxZoom = 3;
 const zoomStep = 0.2;
@@ -730,6 +727,8 @@ async function renderPage(pageNum) {
     // Update zoom button states
     pdfZoomOutBtn.disabled = currentZoom <= minZoom;
     pdfZoomInBtn.disabled = currentZoom >= maxZoom;
+    pdfPrevBtn.disabled = pageNum <= 1;
+    pdfNextBtn.disabled = pageNum >= pdfDoc.numPages;
     
     // Scroll canvas into view
     pdfCanvas.scrollIntoView({ behavior: "smooth", block: "nearest" });
@@ -783,6 +782,18 @@ pdfZoomOutBtn.addEventListener("click", async () => {
   }
 });
 
+pdfPrevBtn.addEventListener("click", () => {
+  if (currentPage > 1) {
+    renderPage(currentPage - 1);
+  }
+});
+
+pdfNextBtn.addEventListener("click", () => {
+  if (currentPage < pdfDoc.numPages) {
+    renderPage(currentPage + 1);
+  }
+});
+
 pdfCloseBtn.addEventListener("click", closePDFModal);
 
 // Close on backdrop click
@@ -804,5 +815,11 @@ document.addEventListener("keydown", (event) => {
   }
   if (event.key === "Escape") {
     closePDFModal();
+  }
+  if (event.key === "ArrowLeft") {
+    pdfPrevBtn.click();
+  }
+  if (event.key === "ArrowRight") {
+    pdfNextBtn.click();
   }
 });

@@ -140,12 +140,18 @@
         <div class="pdf-modal-header">
           <h5>Resume</h5>
           <div class="pdf-modal-controls">
+            <button id="pdf-prev-btn" class="pdf-control-btn" aria-label="Previous page" title="Previous Page">
+              <i class="fa-solid fa-chevron-left"></i>
+            </button>
             <button id="pdf-zoom-out-btn" class="pdf-control-btn" aria-label="Zoom out" title="Zoom Out">
               <i class="fa-solid fa-minus"></i>
             </button>
             <span id="pdf-page-info" class="pdf-page-info">Page <span id="pdf-current-page">1</span> of <span id="pdf-total-pages">0</span></span>
             <button id="pdf-zoom-in-btn" class="pdf-control-btn" aria-label="Zoom in" title="Zoom In">
               <i class="fa-solid fa-plus"></i>
+            </button>
+            <button id="pdf-next-btn" class="pdf-control-btn" aria-label="Next page" title="Next Page">
+              <i class="fa-solid fa-chevron-right"></i>
             </button>
             <a id="pdf-download-btn" class="pdf-control-btn" aria-label="Download PDF" title="Download" href="static/resume.pdf" download>
               <i class="fa-solid fa-download"></i>

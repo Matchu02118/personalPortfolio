@@ -92,7 +92,7 @@ a {
   display: block;
 }
 
-.profile-card h1 {
+.profile-card h2 {
   margin: 0 0 0.6rem;
   font-size: clamp(2rem, 2.4vw, 2.5rem);
   line-height: 1.05;
@@ -640,6 +640,33 @@ a {
   transition: opacity 0.25s ease;
 }
 
+/* Custom Scrollbar for all modals and scrollable areas */
+.image-modal-details,
+.project-modal-details,
+.pdf-modal-viewer,
+.image-modal-content,
+.project-modal-content {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 90, 104, 0.4) transparent;
+}
+
+.image-modal-details::-webkit-scrollbar,
+.project-modal-details::-webkit-scrollbar,
+.pdf-modal-viewer::-webkit-scrollbar,
+.image-modal-content::-webkit-scrollbar,
+.project-modal-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.image-modal-details::-webkit-scrollbar-thumb,
+.project-modal-details::-webkit-scrollbar-thumb,
+.pdf-modal-viewer::-webkit-scrollbar-thumb,
+.image-modal-content::-webkit-scrollbar-thumb,
+.project-modal-content::-webkit-scrollbar-thumb {
+  background: rgba(255, 90, 104, 0.4);
+  border-radius: 10px;
+}
+
 .image-modal.open {
   display: grid;
   opacity: 1;
@@ -717,6 +744,8 @@ a {
   display: grid;
   gap: 0.85rem;
   text-align: left;
+  max-height: 60vh;
+  overflow-y: auto;
 }
 
 .image-modal-details h5 {
@@ -757,44 +786,6 @@ a {
     max-height: 90vh;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
-  }
-
-  .image-modal-details,
-  .project-modal-details {
-    max-height: 60vh;
-    overflow-y: auto;
-    padding-right: 0.5rem;
-  }
-
-  /* Custom scrollbar styling for WebKit browsers */
-  .image-modal-content::-webkit-scrollbar,
-  .project-modal-content::-webkit-scrollbar,
-  .image-modal-details::-webkit-scrollbar,
-  .project-modal-details::-webkit-scrollbar {
-    width: 8px;
-  }
-
-  .image-modal-content::-webkit-scrollbar-track,
-  .project-modal-content::-webkit-scrollbar-track,
-  .image-modal-details::-webkit-scrollbar-track,
-  .project-modal-details::-webkit-scrollbar-track {
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 4px;
-  }
-
-  .image-modal-content::-webkit-scrollbar-thumb,
-  .project-modal-content::-webkit-scrollbar-thumb,
-  .image-modal-details::-webkit-scrollbar-thumb,
-  .project-modal-details::-webkit-scrollbar-thumb {
-    background: rgba(255, 90, 104, 0.4);
-    border-radius: 4px;
-  }
-
-  .image-modal-content::-webkit-scrollbar-thumb:hover,
-  .project-modal-content::-webkit-scrollbar-thumb:hover,
-  .image-modal-details::-webkit-scrollbar-thumb:hover,
-  .project-modal-details::-webkit-scrollbar-thumb:hover {
-    background: rgba(255, 90, 104, 0.6);
   }
 }
 
@@ -890,6 +881,8 @@ a {
   display: grid;
   gap: 0.85rem;
   text-align: left;
+  max-height: 65vh;
+  overflow-y: auto;
 }
 
 .project-modal-details h5 {
