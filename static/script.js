@@ -429,17 +429,34 @@ function updateSection(event) {
   setActiveSection(selected);
 }
 
+function isMobileNavbar() {
+  return window.innerWidth <= 720 || window.matchMedia("(pointer: coarse)").matches;
+}
+
+function updateTaskbarMode() {
+  if (isMobileNavbar()) {
+    taskbar.classList.add("no-autohide");
+    showTaskbar();
+    clearTimeout(hideTimer);
+  } else {
+    taskbar.classList.remove("no-autohide");
+    resetHideTimer();
+  }
+}
+
 function showTaskbar() {
   taskbar.classList.add("show");
   taskbar.classList.remove("hidden");
 }
 
 function hideTaskbar() {
+  if (taskbar.classList.contains("no-autohide")) return;
   taskbar.classList.add("hidden");
   taskbar.classList.remove("show");
 }
 
 function resetHideTimer() {
+  if (taskbar.classList.contains("no-autohide")) return;
   clearTimeout(hideTimer);
   hideTimer = setTimeout(() => {
     if (!taskbar.matches(":hover")) {
@@ -449,6 +466,7 @@ function resetHideTimer() {
 }
 
 function handlePointerMove(event) {
+  if (taskbar.classList.contains("no-autohide")) return;
   if (window.innerHeight - event.clientY < 120) {
     showTaskbar();
     resetHideTimer();
@@ -463,12 +481,9 @@ function handlePointerMove(event) {
 window.addEventListener("mousemove", handlePointerMove);
 window.addEventListener("touchstart", showTaskbar);
 window.addEventListener("touchend", resetHideTimer);
+window.addEventListener("resize", updateTaskbarMode);
 taskbar.addEventListener("mouseenter", showTaskbar);
 taskbar.addEventListener("mouseleave", resetHideTimer);
-
-if (imageModalClose) {
-  imageModalClose.addEventListener("click", closeImageModal);
-}
 if (imageModal) {
   imageModal.addEventListener("click", (event) => {
     if (event.target === imageModal || event.target.dataset.closeModal !== undefined) {
@@ -512,4 +527,4 @@ window.addEventListener("keydown", (event) => {
 });
 
 setActiveSection("about");
-resetHideTimer();
+updateTaskbarMode();
