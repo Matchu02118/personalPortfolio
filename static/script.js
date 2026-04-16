@@ -281,7 +281,7 @@ const projectData = [
     title: "AI Camera-Integrated Waste Collection and Segregation System Using Raspberry Pi",
     description: "Raspberry Pi powered waste collection system that detects and sorts recyclable items.",
     github: "https://github.com/Matchu02118/garbageDetectionSegregation",
-    tags: ["Python", "Machine Learning", "YOLOv5", "Raspberry Pi", "Robotics", "Embedded Systems"],
+    tags: ["Python", "Machine Learning", "Raspberry Pi", "Robotics", "Embedded Systems"],
     images: [
       "static/img/projects/1.jpg",
       "static/img/projects/1-b.jpg",

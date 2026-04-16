@@ -189,6 +189,7 @@ a {
   gap: 1rem;
   margin-top: 1.5rem;
   max-width: 760px;
+  margin-bottom: 1rem;
 }
 
 .form-row {
@@ -220,7 +221,15 @@ a {
   color: white;
   padding: 1rem 1.2rem;
   cursor: pointer;
-  width: fit-content;
+  width: 100%;
+  max-width: 760px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.submit-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(255, 90, 104, 0.3);
 }
 
 .contact-links {
@@ -1007,6 +1016,10 @@ a {
   .contact-grid {
     grid-template-columns: 1fr;
   }
+
+  .dynamic-shell {
+    padding-bottom: 140px;
+  }
 }
 
 .contact-card strong {
@@ -1147,6 +1160,33 @@ a {
 
   .dynamic-shell {
     padding: 1.5rem;
+    padding-bottom: 160px;
+  }
+
+  .contact-form {
+    margin-bottom: 2rem;
+  }
+
+  .form-input,
+  .form-textarea {
+    padding: 0.85rem 1rem;
+    font-size: 16px;
+  }
+
+  .form-textarea {
+    min-height: 120px;
+  }
+
+  .skill-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .certificate-grid {
+    grid-template-columns: 1fr;
   }
 
   .taskbar {
