@@ -516,6 +516,12 @@ function openProjectModal(projectIndex, imageIndex = 0) {
   projectModalDescription.textContent = project.description;
   projectModalGithub.href = project.github || "#";
   projectModalGithub.style.display = project.github ? "inline-flex" : "none";
+
+  // Show/hide navigation arrows based on image count
+  const hasMultipleImages = project.images.length > 1;
+  projectModalPrev.style.display = hasMultipleImages ? "block" : "none";
+  projectModalNext.style.display = hasMultipleImages ? "block" : "none";
+
   projectModal.classList.add("open");
 }
 

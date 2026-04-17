@@ -825,6 +825,17 @@ a {
   align-items: center;
   justify-items: center;
   gap: 1rem;
+  transition: all 0.2s ease;
+}
+
+/* When navigation is hidden, adjust the layout */
+.project-modal-nav[style*="display: none"] + .project-modal-image-wrap,
+.project-modal-nav[style*="display: none"] + .project-modal-image-wrap + .project-modal-nav[style*="display: none"] {
+  grid-row: 1;
+}
+
+.project-modal-nav[style*="display: none"] + .project-modal-image-wrap {
+  margin: 0;
 }
 
 .project-modal-image-wrap {
@@ -839,6 +850,14 @@ a {
   background: #0a111f;
   display: grid;
   place-items: center;
+  transition: all 0.2s ease;
+}
+
+/* When navigation buttons are hidden, make the image larger */
+.project-modal-nav[style*="display: none"] + .project-modal-image-wrap,
+.project-modal-image-wrap:has(+ .project-modal-nav[style*="display: none"]) {
+  max-height: 70vh;
+  min-height: 380px;
 }
 
 .project-modal-image-wrap img {
@@ -861,7 +880,15 @@ a {
   color: #eef2ff;
   font-size: 1.45rem;
   cursor: pointer;
-  transition: transform 0.2s ease, background 0.2s ease;
+  transition: transform 0.2s ease, background 0.2s ease, opacity 0.2s ease, visibility 0.2s ease;
+  opacity: 1;
+  visibility: visible;
+}
+
+.project-modal-nav[style*="display: none"] {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
 }
 
 .project-modal-nav:hover {
