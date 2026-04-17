@@ -1,7 +1,5 @@
 /*
-  EDITABLE CONTENT SECTION
-  Replace the text inside each section object below with content from your own portfolio.
-  Keep the data-section keys the same unless you also edit the HTML nav buttons.
+  Editable Section Content
 */
 
 const sections = {
@@ -275,7 +273,7 @@ const sections = {
   },
 };
 
-// note to self: add future project entries here
+// Editable PROJECT ENTRIES
 const projectData = [
   {
     title: "AI Camera-Integrated Waste Collection and Segregation System Using Raspberry Pi",
