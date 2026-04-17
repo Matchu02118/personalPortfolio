@@ -239,7 +239,7 @@ const sections = {
       <div class="content-block">
         <h4>Contact</h4>
         <p>
-          Send a message directly to my Outlook account using the same form action from the original portfolio.
+          Send a message directly to my E-Mail.
         </p>
       </div>
       <div class="contact-grid">
@@ -257,7 +257,7 @@ const sections = {
         </article>
         <article class="contact-card">
           <strong>Available for</strong>
-          <p>System Administration, Data Analysis, and technical support work.</p>
+          <p>Entry-level positions in Data Analysis and Junior System Administration.</p>
         </article>
       </div>
       <form class="contact-form" action="https://formsubmit.co/estorga.carlmathew11@outlook.com" method="POST">
