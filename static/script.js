@@ -311,18 +311,23 @@ const projectData = [
     images: ["static/img/projects/5.png"]
   },
   {
-    title: "IP Subnet Calculator",
-    description: "Network calculator that converts IP and subnet mask values into decimal and binary results.",
-    tags: ["Python", "PyQt", "App Development", "Networking"],
-    images: ["static/img/projects/3.jpg"]
-  },
-  {
     title: "Daily Time Record",
     description: "The Excel spreadsheet I created to calculate hours I have left on my On-The-Job Training (OJT) program, which I also used to track my attendance and performance during the internship.",
     tags: ["Microsoft Excel", "Office"],
     images: [
       "static/img/projects/6.jpg",
       "static/img/projects/6-b.jpg",
+    ]
+  },
+  {
+    title: "Olympics Country Medals Mock Data Chart",
+    description: "Performed data cleaning, data analysis, and data visualization on a mock Olympics dataset (from Career Principles) medal count of countries that participated using Microsoft Excel.",
+    tags: ["Microsoft Excel", "Data Analysis"],
+    images: [
+      "static/img/projects/7.png",
+      "static/img/projects/7-a.png",
+      "static/img/projects/7-b.png",
+      "static/img/projects/7-c.png",
     ]
   }
 ];
