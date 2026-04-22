@@ -18,7 +18,7 @@ const sections = {
           </p>
         </div>
         <div class="about-visual">
-          <img src="static/grad-pic-UST-L.png" alt="Graduation photo" />
+          <img src="static/about-me-pic.png" alt="About Me Pic" />
         </div>
       </div>
     `,
