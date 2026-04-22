@@ -197,38 +197,7 @@ const sections = {
           A collection of certificates demonstrating my participation in IT, AI, networking, and web design programs.
         </p>
       </div>
-      <div class="certificate-grid">
-        <article class="project-card certificate-clickable">
-          <img src="static/img/certificates/1.png" alt="Digital Opportunities Using ICT certificate" />
-          <h5>Webinar on Digital Opportunities Using ICT</h5>
-          <p>Certificate of participation from Knights of Online Marketers.</p>
-        </article>
-        <article class="project-card certificate-clickable">
-          <img src="static/img/certificates/2.png" alt="AIVolution AI Revolution certificate" />
-          <h5>AIVolution - AI Revolution</h5>
-          <p>Participation certificate for AI learning and future technology discussions.</p>
-        </article>
-        <article class="project-card certificate-clickable">
-          <img src="static/img/certificates/3.png" alt="TESDA Setting Up Computer Networks certificate" />
-          <h5>TESDA - Setting Up Computer Networks</h5>
-          <p>Official completion certificate for a computer networking course.</p>
-        </article>
-        <article class="project-card certificate-clickable">
-          <img src="static/img/certificates/4.png" alt="freeCodeCamp Responsive Web Design certificate" />
-          <h5>freeCodeCamp Responsive Web Design</h5>
-          <p>Responsive web design certification demonstrating front-end web development skills.</p>
-        </article>
-        <article class="project-card certificate-clickable">
-          <img src="static/img/certificates/5.png" alt="SoloLearn Introduction to Python certificate" />
-          <h5>SoloLearn Introduction to Python</h5>
-          <p>Python programming certificate for beginner-level development and automation.</p>
-        </article>
-        <article class="project-card certificate-clickable">
-          <img src="static/img/certificates/6.png" alt="UST-L OJT Certificate" />
-          <h5>University of Santo Tomas-Legazpi OJT Certificate</h5>
-          <p>On-the-job training certificate from University of Santo Tomas-Legazpi.</p>
-        </article>
-      </div>
+      <div id="certificate-grid" class="certificate-grid">
     `,
   },
   contact: {
@@ -288,6 +257,43 @@ const projectData = [
     ]
   },
   {
+    title: "Obstacle Avoiding Robot",
+    description: "Arduino mobile robot with sensors for automated obstacle detection and navigation.",
+    tags: ["Embedded Systems", "Robotics"],
+    images: ["static/img/projects/4.jpg"]
+  },
+    {
+    title: "Multi-Voltage Power Supply",
+    description: "A power supply which the output voltage can be 5V, 6V, 9V, and 12V respectively that can be used to meet and provide the correct voltage level to electronic projects.",
+    tags: ["Electronics"],
+    images: [
+      "static/img/projects/8.jpeg",
+      "static/img/projects/8-a.jpeg",
+      "static/img/projects/8-b.png"
+    ]
+  },
+  {
+    title: "Daily Time Record",
+    description: "The Excel spreadsheet I created to calculate hours I have left on my On-The-Job Training (OJT) program, which I also used to track my attendance and performance during the internship.",
+    tags: ["Microsoft Excel", "Office"],
+    images: [
+      "static/img/projects/6.png",
+      "static/img/projects/6-a.png",
+      "static/img/projects/6-b.png"
+    ]
+  },  
+  {
+    title: "Olympics Country Medals Mock Data Visualization",
+    description: "Performed data cleaning, data analysis, and data visualization on a mock Olympics dataset (from Career Principles) medal count of countries that participated using Microsoft Excel.",
+    tags: ["Microsoft Excel", "Data Analysis"],
+    images: [
+      "static/img/projects/7.png",
+      "static/img/projects/7-a.png",
+      "static/img/projects/7-b.png",
+      "static/img/projects/7-c.png",
+    ]
+  },
+  {
     title: "File Organizer App",
     description: "Desktop application for sorting and managing files by type and folder.",
     github: "https://github.com/Matchu02118/file_organizer",
@@ -299,37 +305,56 @@ const projectData = [
     ]
   },
   {
-    title: "Obstacle Avoiding Robot",
-    description: "Arduino mobile robot with sensors for automated obstacle detection and navigation.",
-    tags: ["Embedded Systems", "Robotics"],
-    images: ["static/img/projects/4.jpg"]
-  },
-  {
     title: "Scientific Calculator App",
     description: "A MATLAB-based Casio fx-100MS style calculator for math and engineering workflows.",
     tags: ["App Development"],
     images: ["static/img/projects/5.png"]
-  },
-  {
-    title: "Daily Time Record",
-    description: "The Excel spreadsheet I created to calculate hours I have left on my On-The-Job Training (OJT) program, which I also used to track my attendance and performance during the internship.",
-    tags: ["Microsoft Excel", "Office"],
-    images: [
-      "static/img/projects/6.jpg",
-      "static/img/projects/6-b.jpg",
-    ]
-  },
-  {
-    title: "Olympics Country Medals Mock Data Chart",
-    description: "Performed data cleaning, data analysis, and data visualization on a mock Olympics dataset (from Career Principles) medal count of countries that participated using Microsoft Excel.",
-    tags: ["Microsoft Excel", "Data Analysis"],
-    images: [
-      "static/img/projects/7.png",
-      "static/img/projects/7-a.png",
-      "static/img/projects/7-b.png",
-      "static/img/projects/7-c.png",
-    ]
   }
+];
+
+const certificateData = [
+  {
+    title: "Webinar on Digital Opportunities Using ICT",
+    description: "Certificate of participation from Knights of Online Marketers.",
+    image: "static/img/certificates/1.png",
+    alt: "Digital Opportunities Using ICT certificate"
+  },
+  {
+    title: "AIVolution - AI Revolution",
+    description: "Participation certificate for AI learning and future technology discussions.",
+    image: "static/img/certificates/2.png",
+    alt: "AIVolution AI Revolution certificate"
+  },
+  {
+    title: "TESDA - Setting Up Computer Networks",
+    description: "Official completion certificate for a computer networking course.",
+    image: "static/img/certificates/3.png",
+    alt: "TESDA Setting Up Computer Networks certificate"
+  },
+  {
+    title: "freeCodeCamp Responsive Web Design",
+    description: "Responsive web design certification demonstrating front-end web development skills.",
+    image: "static/img/certificates/4.png",
+    alt: "freeCodeCamp Responsive Web Design certificate"
+  },
+  {
+    title: "SoloLearn Introduction to Python",
+    description: "Python programming certificate for beginner-level development and automation.",
+    image: "static/img/certificates/5.png",
+    alt: "SoloLearn Introduction to Python certificate"
+  },
+  {
+    title: "University of Santo Tomas-Legazpi OJT Certificate",
+    description: "On-the-job training certificate from University of Santo Tomas-Legazpi.",
+    image: "static/img/certificates/6.png",
+    alt: "UST-L OJT Certificate"
+  }/*,
+  {
+    title: "Test Certificate Entry",
+    description: "Brief description of the certificate and what it represents.",
+    image: "static/img/certificates/example.png",
+    alt: "Example Certificate"
+  }*/
 ];
 
 const sectionTitle = document.getElementById("section-title");
@@ -356,6 +381,10 @@ let currentProjectModalIndex = 0;
 let currentProjectModalImageIndex = 0;
 let activeProjectFilter = "All";
 let isFilterExpanded = false;
+let projectCurrentPage = 1;
+const projectItemsPerPage = 6;
+let certificateCurrentPage = 1;
+const certificateItemsPerPage = 6;
 
 function setActiveSection(section) {
   sectionTitle.textContent = sections[section].title;
@@ -370,6 +399,7 @@ function setActiveSection(section) {
   });
 
   if (section === "certificates") {
+    renderCertificateGrid();
     attachCertificateModal();
   }
   if (section === "projects") {
@@ -385,8 +415,36 @@ function getProjectTags() {
 
 function setProjectFilter(tag) {
   activeProjectFilter = tag || "All";
+  projectCurrentPage = 1;
   renderProjectFilterButtons();
   renderProjectGrid();
+}
+
+function changeProjectPage(direction) {
+  const filteredProjects =
+    activeProjectFilter === "All"
+      ? projectData
+      : projectData.filter((project) => (project.tags || []).includes(activeProjectFilter));
+  const totalPages = Math.ceil(filteredProjects.length / projectItemsPerPage);
+
+  const newPage = projectCurrentPage + direction;
+  if (newPage >= 1 && newPage <= totalPages) {
+    projectCurrentPage = newPage;
+    renderProjectGrid();
+  }
+}
+
+function goToProjectPage(page) {
+  const filteredProjects =
+    activeProjectFilter === "All"
+      ? projectData
+      : projectData.filter((project) => (project.tags || []).includes(activeProjectFilter));
+  const totalPages = Math.ceil(filteredProjects.length / projectItemsPerPage);
+
+  if (page >= 1 && page <= totalPages) {
+    projectCurrentPage = page;
+    renderProjectGrid();
+  }
 }
 
 function renderProjectFilterButtons() {
@@ -438,6 +496,87 @@ function attachCertificateModal() {
   });
 }
 
+function changeCertificatePage(direction) {
+  const totalPages = Math.ceil(certificateData.length / certificateItemsPerPage);
+  const newPage = certificateCurrentPage + direction;
+  if (newPage >= 1 && newPage <= totalPages) {
+    certificateCurrentPage = newPage;
+    renderCertificateGrid();
+  }
+}
+
+function goToCertificatePage(page) {
+  const totalPages = Math.ceil(certificateData.length / certificateItemsPerPage);
+  if (page >= 1 && page <= totalPages) {
+    certificateCurrentPage = page;
+    renderCertificateGrid();
+  }
+}
+
+function renderCertificateGrid() {
+  const grid = document.getElementById("certificate-grid");
+  if (!grid) return;
+
+  // Calculate pagination
+  const totalPages = Math.ceil(certificateData.length / certificateItemsPerPage);
+  const startIndex = (certificateCurrentPage - 1) * certificateItemsPerPage;
+  const endIndex = startIndex + certificateItemsPerPage;
+  const certificatesToShow = certificateData.slice(startIndex, endIndex);
+
+  let html = "";
+
+  // Generate certificate cards
+  html += certificatesToShow
+    .map((cert) => {
+      return `
+        <article class="project-card certificate-clickable">
+          <img src="${cert.image}" alt="${cert.alt}" />
+          <h5>${cert.title}</h5>
+          <p>${cert.description}</p>
+        </article>
+      `;
+    })
+    .join("");
+
+  // Add pagination controls if there are multiple pages
+  if (totalPages > 1) {
+    html += `<div class="pagination-controls">`;
+
+    // Previous button
+    html += `<button class="pagination-btn ${certificateCurrentPage === 1 ? 'disabled' : ''}"
+      onclick="changeCertificatePage(-1)" ${certificateCurrentPage === 1 ? 'disabled' : ''}>
+      <i class="fa-solid fa-chevron-left"></i>
+    </button>`;
+
+    // Page numbers
+    for (let i = 1; i <= totalPages; i++) {
+      html += `<button class="pagination-btn ${i === certificateCurrentPage ? 'active' : ''}"
+        onclick="goToCertificatePage(${i})">${i}</button>`;
+    }
+
+    // Next button
+    html += `<button class="pagination-btn ${certificateCurrentPage === totalPages ? 'disabled' : ''}"
+      onclick="changeCertificatePage(1)" ${certificateCurrentPage === totalPages ? 'disabled' : ''}>
+      <i class="fa-solid fa-chevron-right"></i>
+    </button>`;
+
+    html += `</div>`;
+  }
+
+  grid.innerHTML = html;
+
+  // Re-attach modal listeners
+  const certCards = document.querySelectorAll(".certificate-clickable");
+  certCards.forEach((card) => {
+    card.addEventListener("click", () => {
+      const img = card.querySelector("img");
+      const title = card.querySelector("h5")?.textContent || "Certificate image";
+      const description = card.querySelector("p")?.textContent || "";
+      openImageModal(img.src, title, description);
+    });
+  });
+}
+
 function renderProjectGrid() {
   const grid = document.getElementById("project-grid");
   if (!grid) return;
@@ -448,25 +587,59 @@ function renderProjectGrid() {
       ? projectData
       : projectData.filter((project) => (project.tags || []).includes(activeProjectFilter));
 
-  grid.innerHTML = filteredProjects.length
-    ? filteredProjects
-        .map((project) => {
-          const originalIndex = projectData.indexOf(project);
-          return `
-            <article class="project-card project-card-clickable" data-project-index="${originalIndex}">
-              <div class="project-image-wrap">
-                <img src="${project.images[0]}" alt="${project.title}" />
-              </div>
-              <h5>${project.title}</h5>
-              <p>${project.description}</p>
-              ${project.github ? `
-                <p class="muted">GitHub available for this project.</p>
-              ` : ""}
-            </article>
-          `;
-        })
-        .join("")
-    : `<div class="empty-state">No matching projects found. Try another filter or select All.</div>`;
+  // Calculate pagination
+  const totalPages = Math.ceil(filteredProjects.length / projectItemsPerPage);
+  const startIndex = (projectCurrentPage - 1) * projectItemsPerPage;
+  const endIndex = startIndex + projectItemsPerPage;
+  const projectsToShow = filteredProjects.slice(startIndex, endIndex);
+
+  let html = "";
+
+  if (projectsToShow.length > 0) {
+    html += projectsToShow
+      .map((project) => {
+        const originalIndex = projectData.indexOf(project);
+        return `
+  <article class="project-card project-card-clickable" data-project-index="${originalIndex}">
+    <div class="project-image-wrap">
+      <img src="${project.images[0]}" alt="${project.title}" />
+    </div>
+    <h5>${project.title}</h5>
+    <p>${project.description}</p>
+  </article>
+`;
+      })
+      .join("");
+  } else {
+    html = `<div class="empty-state">No matching projects found. Try another filter or select All.</div>`;
+  }
+
+  // Add pagination controls if there are multiple pages
+  if (totalPages > 1) {
+    html += `<div class="pagination-controls">`;
+
+    // Previous button
+    html += `<button class="pagination-btn ${projectCurrentPage === 1 ? 'disabled' : ''}"
+      onclick="changeProjectPage(-1)" ${projectCurrentPage === 1 ? 'disabled' : ''}>
+      <i class="fa-solid fa-chevron-left"></i>
+    </button>`;
+
+    // Page numbers
+    for (let i = 1; i <= totalPages; i++) {
+      html += `<button class="pagination-btn ${i === projectCurrentPage ? 'active' : ''}"
+        onclick="goToProjectPage(${i})">${i}</button>`;
+    }
+
+    // Next button
+    html += `<button class="pagination-btn ${projectCurrentPage === totalPages ? 'disabled' : ''}"
+      onclick="changeProjectPage(1)" ${projectCurrentPage === totalPages ? 'disabled' : ''}>
+      <i class="fa-solid fa-chevron-right"></i>
+    </button>`;
+
+    html += `</div>`;
+  }
+
+  grid.innerHTML = html;
 
   const cards = grid.querySelectorAll(".project-card-clickable");
   cards.forEach((card) => {
