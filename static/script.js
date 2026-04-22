@@ -134,7 +134,7 @@ const sections = {
           <div class="content-block">
         <h4>My Projects</h4>
         <p>
-          A selection of notable software and hardware projects — from automation tools to robotics.
+          A selection of notable software and hardware projects — from application development to robotics.
         </p>
       </div>
       <div class="project-filter-container">
