@@ -259,7 +259,10 @@ const projectData = [
     title: "Obstacle Avoiding Robot",
     description: "Arduino mobile robot with sensors for automated obstacle detection and navigation.",
     tags: ["Embedded Systems", "Robotics"],
-    images: ["static/img/projects/4.jpg"]
+    images: [
+      "static/img/projects/4.jpg", 
+      "static/img/projects/4-a.jpg"
+    ]
   },
     {
     title: "Multi-Voltage Power Supply",
