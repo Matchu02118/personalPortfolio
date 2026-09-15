@@ -223,7 +223,7 @@ const sections = {
         </article>
         <article class="contact-card">
           <strong>Available for</strong>
-          <p>Entry-level positions in Data Analysis and Junior System Administration.</p>
+          <p>Entry-level positions in Data Analysis, Junior System Administration, and General IT work.</p>
         </article>
       </div>
       <form class="contact-form" action="https://formsubmit.co/estorga.carlmathew11@outlook.com" method="POST">
