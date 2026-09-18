@@ -22,7 +22,7 @@
                     </div>
                 </div>
                 <h2>Carl Mathew Estorga</h2>
-                <p class="role">Computer Engineer • System Admin • Data Analyst</p>
+                <p class="role">Computer Engineer</p>
                 <div class="profile-socials">
                     <a href="https://web.facebook.com/CME811/" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
                     <a href="https://linkedin.com/in/carl-mathew-estorga-163855372" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
@@ -43,6 +43,7 @@
                         <a href="mailto:estorgacarlmathew@gmail.com">estorgacarlmathew@gmail.com</a>
                     </div>
                 </div>
+                  <a class="resume-btn profile-resume-btn" href="#" id="view-resume-btn" style="font-weight: bold;">View Resume</a>
             </div>
         </aside>
         <!-- End of Editable PROFILE CARD -->
@@ -52,47 +53,41 @@
                 <!-- Editable HERO TEXT-->
                 <div class="hero-copy">
                     <span class="eyebrow">Portfolio</span>
-                    <h2>Computer Engineering, and System Administration</h2>
+                    <h2>Embedded Systems, System Administration, and Data Analysis</h2>
                     <p>
-                        I'm a BS Computer Engineering graduate with hands-on experience in microcontroller projects, Linux, system troubleshooting, and productivity tools.
+                        I'm a BS Computer Engineering graduate with hands-on experience in microcontroller projects, programming, system troubleshooting, and productivity tools.
                     </p>
+                    <nav id="taskbar" class="taskbar" aria-label="Portfolio sections">
+                      <span class="taskbar-label">Explore</span>
+                      <div class="taskbar-links">
+                        <button class="taskbar-btn active" data-section="about"><span>🪪</span><span>About</span></button>
+                        <button class="taskbar-btn" data-section="projects"><span>🗂️</span><span>Projects</span></button>
+                        <button class="taskbar-btn" data-section="education"><span>💼</span><span>Work Experience</span></button>
+                        <button class="taskbar-btn" data-section="certificates"><span>📜</span><span>Certificates</span></button>
+                        <button class="taskbar-btn" data-section="skills"><span>⚙️</span><span>Skills</span></button>
+                        <button class="taskbar-btn" data-section="contact"><span>📬</span><span>Contact</span></button>
+                      </div>
+                    </nav>
                 </div>
 
-                <div class="hero-actions">
-                    <a class="resume-btn" href="#" id="view-resume-btn" style="font-weight: bold;">View Resume</a>
-                </div>
                 <!-- END of Editable HERO TEXT -->
             </section>
 
             <section class="dynamic-shell">
                 <div class="dynamic-header">
                     <div>
-                        <span class="section-badge">Note</span>
+                    <button id="back-to-hero" class="section-badge back-to-hero" type="button" aria-label="Scroll back to hero navigation">
+                      <i class="fa-solid fa-arrow-up"></i>
+                      <span>Back</span>
+                    </button>
                         <h3 id="section-title">About Me</h3>
                     </div>
-                    <p class="section-subtitle">
-                        Move the cursor near the bottom edge to reveal the auto-hiding navigation bar (PC and Laptop).
-
-                        Tap on bottom left or right corners to reveal the navigation bar (Mobile and Tablet).
-
-                    </p>
                 </div>
 
                 <div id="dynamic-content" class="dynamic-content"></div>
             </section>
         </main>
     </div>
-
-    <!-- Editable NAVIGATION -->
-    <nav id="taskbar" class="taskbar show">
-        <button class="taskbar-btn active" data-section="about"><span>🏠</span><span>About</span></button>
-        <button class="taskbar-btn" data-section="education"><span>🎓</span><span>Education</span></button>
-        <button class="taskbar-btn" data-section="projects"><span>🗂️</span><span>Projects</span></button>
-        <button class="taskbar-btn" data-section="certificates"><span>📜</span><span>Certificates</span></button>
-        <button class="taskbar-btn" data-section="skills"><span>🧠</span><span>Skills</span></button>
-        <button class="taskbar-btn" data-section="contact"><span>✉️</span><span>Contact</span></button>
-    </nav>
-    <!-- END of Editable NAVIGATION -->
 
     <div id="touch-zone" class="touch-zone" aria-hidden="true"></div>
 
@@ -106,6 +101,7 @@
           </div>
         </div>
         <div class="image-modal-details">
+          <span class="image-modal-eyebrow"><i class="fa-solid fa-award"></i> Certificate</span>
           <h5 id="image-modal-caption"></h5>
           <p id="image-modal-description" class="image-modal-description"></p>
         </div>
@@ -117,17 +113,28 @@
       <div class="project-modal-content">
         <button id="project-modal-close" class="project-modal-close" aria-label="Close project preview">×</button>
         <div class="project-modal-image-column">
-          <button id="project-modal-prev" class="project-modal-nav project-modal-prev" aria-label="Previous image">▲</button>
           <div class="project-modal-image-wrap">
             <img id="project-modal-img" src="" alt="Project preview" />
           </div>
-          <button id="project-modal-next" class="project-modal-nav project-modal-next" aria-label="Next image">▼</button>
+          <div class="project-modal-thumbnail-picker">
+            <button id="project-modal-thumbnails-prev" class="project-modal-thumbnail-nav" type="button" aria-label="Show previous project images">
+              <i class="fa-solid fa-chevron-left"></i>
+            </button>
+            <div id="project-modal-thumbnails" class="project-modal-thumbnails" aria-label="Project images"></div>
+            <button id="project-modal-thumbnails-next" class="project-modal-thumbnail-nav" type="button" aria-label="Show more project images">
+              <i class="fa-solid fa-chevron-right"></i>
+            </button>
+          </div>
         </div>
         <div class="project-modal-details">
+          <span class="project-modal-eyebrow"><i class="fa-solid fa-sparkles"></i> Project preview</span>
           <h5 id="project-modal-caption"></h5>
           <div id="project-modal-tags" class="project-modal-tags"></div>
           <p id="project-modal-description"></p>
-          <a id="project-modal-github" class="project-modal-github" href="#" target="_blank" rel="noreferrer noopener">GitHub Link</a>
+          <a id="project-modal-github" class="project-modal-github" href="#" target="_blank" rel="noreferrer noopener">
+            <span>Explore the repository</span>
+            <i class="fa-brands fa-github"></i>
+          </a>
         </div>
       </div>
     </div>

@@ -4,17 +4,12 @@
 
 const sections = {
   about: {
-    title: "About Me",
     content: `
       <div class="content-block about-grid">
         <div class="about-text">
           <h4>About Me</h4>
-          <p style="text-align: justify;">
-            I'm a <span style="font-weight:bold;">Bachelor of Science in Computer Engineering</span> graduate with a passion for software maintenance,
-            backed by a strong foundation in circuit diagram and flowchart design. I'm knowledgeable in Python,
-            HTML, and CSS, with hands-on experience in microcontroller programming, circuit analysis, Linux OS,
-            and software troubleshooting. Proficient in Microsoft 365 and Google Workspace for efficient
-            documentation, data management, and collaborative work.
+          <p style="margin-top: 10px;">
+            I'm a Detail-oriented Computer Engineer focused on Linux systems administration, Embedded Systems, and Data Analysis. Skilled in Microcontroller Programming, Circuit Diagram Design, and Machine Learning. I have a strong foundation in both hardware and software disciplines, with experience in Raspberry Pi and Arduino-based projects. I am passionate about leveraging technology to solve real-world problems and continuously expanding my knowledge in the field of computer engineering.
           </p>
         </div>
         <div class="about-visual">
@@ -24,15 +19,16 @@ const sections = {
     `,
   },
   skills: {
-    title: "My Skills",
     content: `
+    <div class="content-block">
+        <h4>My Skills</h4>
+      </div>
       <div class="skill-grid">
         <article class="skill-card">
           <div class="skill-icon"><i class="fa-brands fa-raspberry-pi"></i></div>
           <h5>Raspberry Pi</h5>
           <ul>
-            <li>Robotic Projects</li>
-            <li><a href="https://pi-hole.net/" target="_blank">Pi-Hole</a></li>
+            <li>Embedded Systems</li>
           </ul>
         </article>
         <article class="skill-card">
@@ -76,23 +72,13 @@ const sections = {
             <li>Google Workspace</li>
             <li>Microsoft 365</li>
             <li>Canva</li>
-            <li>Notion</li>
-          </ul>
-        </article>
-        <article class="skill-card">
-          <div class="skill-icon"><i class="fa-solid fa-suitcase"></i></div>
-          <h5>Software & Tools</h5>
-          <ul>
-            <li><a href="https://www.chiark.greenend.org.uk/~sgtatham/putty/" target="_blank">PuTTY</a></li>
-            <li><a href="https://syncthing.net/" target="_blank">Syncthing</a></li>
-            <li><a href="https://unbound.net/" target="_blank">Unbound</a></li>
+            <li>OneNote</li>
           </ul>
         </article>
       </div>
     `,
   },
   projects: {
-    title: "Projects",
     content: `
       <style>
         .project-filter-container { margin-bottom: 20px; }
@@ -133,9 +119,6 @@ const sections = {
       </style>
           <div class="content-block">
         <h4>My Projects</h4>
-        <p>
-          A selection of notable software and hardware projects — from application development to robotics.
-        </p>
       </div>
       <div class="project-filter-container">
         <div id="filter-header" class="project-filter-bar">
@@ -150,92 +133,141 @@ const sections = {
     `,
   },
   education: {
-    title: "Education",
     content: `
       <div class="content-block">
-        <h4>Education</h4>
-        <p>
-          University of Santo Tomas-Legazpi
-          <strong>Bachelor of Science in Computer Engineering</strong>
-          (2021 to 2025)
-        </p>
+        <h4>Work Experience</h4>
       </div>
       <div class="timeline">
-        <article class="timeline-item">
-          <h5>Computer Engineering Education</h5>
-          <p>
-            During my years studying Computer Engineering, I developed a strong foundation in both hardware and software disciplines.
-            My interest in Linux began when our instructor introduced us to system and network administration tasks—an experience that
-            sparked my appreciation for its efficiency and reliability in server and security environments.
-          </p>
+        <article class="timeline-item timeline-item-current">
+          <span class="timeline-marker" aria-hidden="true"></span>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <div>
+                <span class="timeline-status">Current role</span>
+                <h4>Insurance Processor</h4>
+              </div>
+              <span class="timeline-company">Accenture</span>
+            </div>
+            <div class="timeline-meta">
+              <i class="fa-regular fa-calendar"></i>
+              <span>April 2026 - Present</span>
+            </div>
+            <ul>
+              <li>Verified health and dental insurance eligibility by evaluating submitted legal documentation from corporate clients and enrolling employees.</li>
+              <li>Developed a custom Excel automation tool tailored to the workflow, significantly boosting processing speed and reducing errors.</li>
+            </ul>
+          </div>
         </article>
         <article class="timeline-item">
-          <h5>Thesis and Practical Projects</h5>
-          <p>
-            For my thesis, my partner and I developed a robotic device programmed in Python and trained with YOLOv5 custom datasets to identify
-            and segregate garbage, combining machine learning and robotics into a practical environmental solution.
-          </p>
-        </article>
-        <article class="timeline-item">
-          <h5>Additional Experience</h5>
-          <p>
-            I also gained experience working with Arduino-based projects like an obstacle-avoiding robot and a flame detection system.
-            I contributed to electrical projects such as a multi-voltage power supply and audio amplifier, and I improved my digital systems understanding
-            through binary, octal, and hexadecimal number system work.
-          </p>
+          <span class="timeline-marker" aria-hidden="true"></span>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <div>
+                <span class="timeline-status">Internship</span>
+                <h4>Computer Engineering Intern</h4>
+              </div>
+              <span class="timeline-company">University of Santo Tomas-Legazpi</span>
+            </div>
+            <div class="timeline-meta">
+              <i class="fa-regular fa-calendar"></i>
+              <span>March 2025 - May 2025</span>
+            </div>
+            <ul>
+              <li>Provided technical support and troubleshooting for organization-wide hardware and software.</li>
+              <li>Resolved network and device issues, including printer maintenance, preventive care, and system configurations.</li>
+            </ul>
+          </div>
         </article>
       </div>
     `,
   },
   certificates: {
-    title: "Certificates",
     content: `
       <div class="content-block">
         <h4>Certificates</h4>
-        <p>
-          A collection of certificates demonstrating my participation in IT, AI, networking, and web design programs.
-        </p>
       </div>
       <div id="certificate-grid" class="certificate-grid">
     `,
   },
   contact: {
-    title: "Contact Me",
     content: `
-      <div class="content-block">
-        <h4>Contact</h4>
-        <p>
-          Send a message directly to my E-Mail.
-        </p>
+      <div class="contact-intro">
+        <div class="contact-intro-copy">
+          <span class="contact-kicker">Let's connect</span>
+          <h4>Contact Me</h4>
+          <p>Have a project, opportunity, or technical question? Send a message and I'll get back to you as soon as I can.</p>
+        </div>
+        <div class="contact-status">
+          <i class="fa-solid fa-signal"></i>
+          <span>Open to opportunities</span>
+        </div>
       </div>
       <div class="contact-grid">
         <article class="contact-card">
-          <strong>Primary Email</strong>
+          <div class="contact-card-icon"><i class="fa-solid fa-envelope"></i></div>
+          <div>
+            <strong>Primary Email</strong>
+            <span class="contact-card-label">Best for direct inquiries</span>
+          </div>
           <p><a href="mailto:estorga.carlmathew11@outlook.com">estorga.carlmathew11@outlook.com</a></p>
         </article>
         <article class="contact-card">
-          <strong>Secondary Email</strong>
+          <div class="contact-card-icon"><i class="fa-solid fa-at"></i></div>
+          <div>
+            <strong>Secondary Email</strong>
+            <span class="contact-card-label">A second way to reach me</span>
+          </div>
           <p><a href="mailto:estorgacarlmathew@gmail.com">estorgacarlmathew@gmail.com</a></p>
         </article>
         <article class="contact-card">
-          <strong>Location</strong>
+          <div class="contact-card-icon"><i class="fa-solid fa-location-dot"></i></div>
+          <div>
+            <strong>Location</strong>
+            <span class="contact-card-label">Based in the Philippines</span>
+          </div>
           <p>Pasay City, Philippines</p>
         </article>
         <article class="contact-card">
-          <strong>Available for</strong>
+          <div class="contact-card-icon"><i class="fa-solid fa-code"></i></div>
+          <div>
+            <strong>Available for</strong>
+            <span class="contact-card-label">Let's build something useful</span>
+          </div>
           <p>Entry-level positions in Data Analysis, Junior System Administration, and General IT work.</p>
         </article>
       </div>
       <form class="contact-form" action="https://formsubmit.co/estorga.carlmathew11@outlook.com" method="POST">
         <input type="hidden" name="_captcha" value="false" />
         <input type="hidden" name="_template" value="table" />
-        <div class="form-row">
-          <input type="text" name="name" placeholder="Name (Optional)" class="form-input" />
-          <input type="email" name="email" placeholder="E-Mail Address" class="form-input" required />
+        <div class="contact-form-heading">
+          <div>
+            <span class="contact-kicker">Message desk</span>
+            <h5>Start a conversation</h5>
+          </div>
+          <i class="fa-regular fa-paper-plane"></i>
         </div>
-        <input type="text" name="subject" placeholder="Email Subject" class="form-input" required />
-        <textarea name="message" placeholder="Message Body" rows="4" class="form-textarea" required></textarea>
-        <button type="submit" class="submit-button">Submit E-Mail</button>
+        <div class="form-row">
+          <label class="form-field">
+            <span>Name <small>Optional</small></span>
+            <input type="text" name="name" placeholder="Your name" class="form-input" />
+          </label>
+          <label class="form-field">
+            <span>E-mail address</span>
+            <input type="email" name="email" placeholder="you@example.com" class="form-input" required />
+          </label>
+        </div>
+        <label class="form-field">
+          <span>Subject</span>
+          <input type="text" name="subject" placeholder="What would you like to discuss?" class="form-input" required />
+        </label>
+        <label class="form-field">
+          <span>Message</span>
+          <textarea name="message" placeholder="Tell me a little about it..." rows="4" class="form-textarea" required></textarea>
+        </label>
+        <button type="submit" class="submit-button">
+          <span>Send message</span>
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </button>
       </form>
     `,
   },
@@ -247,7 +279,7 @@ const projectData = [
     title: "AI Camera-Integrated Waste Collection and Segregation System Using Raspberry Pi",
     description: "Raspberry Pi powered waste collection system that detects and sorts recyclable items.",
     github: "https://github.com/Matchu02118/garbageDetectionSegregation",
-    tags: ["Python", "Machine Learning", "Raspberry Pi", "Robotics", "Embedded Systems"],
+    tags: ["Machine Learning", "Robotics", "Embedded Systems", "Electronics"],
     images: [
       "static/img/projects/1.jpg",
       "static/img/projects/1-b.jpg",
@@ -258,7 +290,7 @@ const projectData = [
   {
     title: "Obstacle Avoiding Robot",
     description: "Arduino mobile robot with sensors for automated obstacle detection and navigation.",
-    tags: ["Embedded Systems", "Robotics"],
+    tags: ["Robotics", "Electronics"],
     images: [
       "static/img/projects/4.jpg", 
       "static/img/projects/4-a.jpg"
@@ -277,7 +309,7 @@ const projectData = [
   {
     title: "Daily Time Record",
     description: "The Excel spreadsheet I created to calculate hours I have left on my On-The-Job Training (OJT) program, which I also used to track my attendance and performance during the internship.",
-    tags: ["Microsoft Excel", "Office"],
+    tags: ["Microsoft Excel"],
     images: [
       "static/img/projects/6.png",
       "static/img/projects/6-a.png",
@@ -285,21 +317,10 @@ const projectData = [
     ]
   },  
   {
-    title: "Olympics Country Medals Mock Data Visualization",
-    description: "Performed data cleaning, data analysis, and data visualization on a mock Olympics dataset (from Career Principles) medal count of countries that participated using Microsoft Excel.",
-    tags: ["Microsoft Excel", "Data Analysis"],
-    images: [
-      "static/img/projects/7.png",
-      "static/img/projects/7-a.png",
-      "static/img/projects/7-b.png",
-      "static/img/projects/7-c.png",
-    ]
-  },
-  {
     title: "File Organizer App",
     description: "Desktop application for sorting and managing files by type and folder.",
     github: "https://github.com/Matchu02118/file_organizer",
-    tags: ["Python", "PyQt", "App Development"],
+    tags: ["Apps"],
     images: [
       "static/img/projects/2.jpg",
       "static/img/projects/2-b.jpg",
@@ -309,7 +330,7 @@ const projectData = [
   {
     title: "Scientific Calculator App",
     description: "A MATLAB-based Casio fx-100MS style calculator for math and engineering workflows.",
-    tags: ["App Development"],
+    tags: ["Apps"],
     images: ["static/img/projects/5.png"]
   }
 ];
@@ -363,6 +384,7 @@ const sectionTitle = document.getElementById("section-title");
 const contentWrapper = document.getElementById("dynamic-content");
 const taskbarButtons = document.querySelectorAll(".taskbar-btn");
 const taskbar = document.getElementById("taskbar");
+const backToHeroButton = document.getElementById("back-to-hero");
 const imageModal = document.getElementById("image-modal");
 const imageModalImg = document.getElementById("image-modal-img");
 const imageModalCaption = document.getElementById("image-modal-caption");
@@ -370,12 +392,13 @@ const imageModalDescription = document.getElementById("image-modal-description")
 const imageModalClose = document.getElementById("image-modal-close");
 const projectModal = document.getElementById("project-modal");
 const projectModalImage = document.getElementById("project-modal-img");
+const projectModalThumbnails = document.getElementById("project-modal-thumbnails");
+const projectModalThumbnailsPrev = document.getElementById("project-modal-thumbnails-prev");
+const projectModalThumbnailsNext = document.getElementById("project-modal-thumbnails-next");
 const projectModalCaption = document.getElementById("project-modal-caption");
 const projectModalTags = document.getElementById("project-modal-tags");
 const projectModalDescription = document.getElementById("project-modal-description");
 const projectModalGithub = document.getElementById("project-modal-github");
-const projectModalPrev = document.getElementById("project-modal-prev");
-const projectModalNext = document.getElementById("project-modal-next");
 const projectModalClose = document.getElementById("project-modal-close");
 let hideTimer = null;
 let projectAutoIntervals = [];
@@ -532,7 +555,12 @@ function renderCertificateGrid() {
     .map((cert) => {
       return `
         <article class="project-card certificate-clickable">
-          <img src="${cert.image}" alt="${cert.alt}" />
+          <div class="certificate-image-wrap">
+            <img src="${cert.image}" alt="${cert.alt}" />
+            <button class="card-expand-button" type="button" aria-label="Open certificate preview">
+              <i class="fa-solid fa-expand"></i>
+            </button>
+          </div>
           <h5>${cert.title}</h5>
           <p>${cert.description}</p>
         </article>
@@ -605,6 +633,9 @@ function renderProjectGrid() {
   <article class="project-card project-card-clickable" data-project-index="${originalIndex}">
     <div class="project-image-wrap">
       <img src="${project.images[0]}" alt="${project.title}" />
+      <button class="card-expand-button" type="button" aria-label="Open project preview">
+        <i class="fa-solid fa-expand"></i>
+      </button>
     </div>
     <h5>${project.title}</h5>
     <p>${project.description}</p>
@@ -690,6 +721,23 @@ function openProjectModal(projectIndex, imageIndex = 0) {
   currentProjectModalImageIndex = imageIndex;
   projectModalImage.src = project.images[imageIndex];
   projectModalCaption.textContent = project.title;
+  projectModalThumbnails.innerHTML = project.images
+    .map(
+      (image, index) => `
+        <button type="button" class="project-modal-thumbnail ${index === imageIndex ? "active" : ""}" data-image-index="${index}" aria-label="View image ${index + 1}">
+          <img src="${image}" alt="${project.title} image ${index + 1}" />
+        </button>
+      `
+    )
+    .join("");
+  projectModalThumbnails.querySelectorAll(".project-modal-thumbnail").forEach((thumbnail) => {
+    thumbnail.addEventListener("click", () => {
+      selectProjectModalImage(Number(thumbnail.dataset.imageIndex));
+    });
+  });
+  const hasThumbnailNavigation = project.images.length >= 4;
+  projectModalThumbnailsPrev.style.display = hasThumbnailNavigation ? "grid" : "none";
+  projectModalThumbnailsNext.style.display = hasThumbnailNavigation ? "grid" : "none";
   projectModalTags.innerHTML = (project.tags || [])
     .map((tag) => `<span class="project-modal-tag">${tag}</span>`)
     .join("");
@@ -697,24 +745,30 @@ function openProjectModal(projectIndex, imageIndex = 0) {
   projectModalGithub.href = project.github || "#";
   projectModalGithub.style.display = project.github ? "inline-flex" : "none";
 
-  // Show/hide navigation arrows based on image count
-  const hasMultipleImages = project.images.length > 1;
-  projectModalPrev.style.display = hasMultipleImages ? "block" : "none";
-  projectModalNext.style.display = hasMultipleImages ? "block" : "none";
-
   projectModal.classList.add("open");
+}
+
+function selectProjectModalImage(imageIndex) {
+  const project = projectData[currentProjectModalIndex];
+  if (!project || imageIndex < 0 || imageIndex >= project.images.length) return;
+
+  currentProjectModalImageIndex = imageIndex;
+  projectModalImage.style.opacity = "0";
+  setTimeout(() => {
+    projectModalImage.src = project.images[imageIndex];
+    projectModalImage.style.opacity = "1";
+  }, 250);
+
+  projectModalThumbnails.querySelectorAll(".project-modal-thumbnail").forEach((thumbnail, index) => {
+    thumbnail.classList.toggle("active", index === imageIndex);
+  });
 }
 
 function changeProjectModalImage(step) {
   const project = projectData[currentProjectModalIndex];
   if (!project || project.images.length <= 1) return;
-  currentProjectModalImageIndex = (currentProjectModalImageIndex + step + project.images.length) % project.images.length;
-  const nextSource = project.images[currentProjectModalImageIndex];
-  projectModalImage.style.opacity = "0";
-  setTimeout(() => {
-    projectModalImage.src = nextSource;
-    projectModalImage.style.opacity = "1";
-  }, 250);
+  const nextIndex = (currentProjectModalImageIndex + step + project.images.length) % project.images.length;
+  selectProjectModalImage(nextIndex);
 }
 
 function closeProjectModal() {
@@ -743,74 +797,12 @@ function updateSection(event) {
   const selected = event.currentTarget.dataset.section;
   if (!selected) return;
   setActiveSection(selected);
+  document.querySelector(".dynamic-shell")?.scrollIntoView({
+    behavior: "smooth",
+    block: "start",
+  });
 }
 
-function isMobileNavbar() {
-  return window.innerWidth <= 720 || window.matchMedia("(pointer: coarse)").matches;
-}
-
-function updateTaskbarMode() {
-  if (isMobileNavbar()) {
-    taskbar.classList.add("hidden");
-    taskbar.classList.remove("show");
-    clearTimeout(hideTimer);
-  } else {
-    taskbar.classList.remove("hidden");
-    taskbar.classList.add("show");
-    resetHideTimer();
-  }
-}
-
-function showTaskbar() {
-  taskbar.classList.add("show");
-  taskbar.classList.remove("hidden");
-}
-
-function hideTaskbar() {
-  taskbar.classList.add("hidden");
-  taskbar.classList.remove("show");
-}
-
-function resetHideTimer() {
-  clearTimeout(hideTimer);
-  hideTimer = setTimeout(() => {
-    if (!taskbar.matches(":hover")) {
-      hideTaskbar();
-    }
-  }, 1400);
-}
-
-function shouldRevealTaskbarOnTouch(event) {
-  if (!event.touches || event.touches.length === 0) return false;
-  const touchY = event.touches[0].clientY;
-  return touchY > window.innerHeight - 96;
-}
-
-function handleTouchStart(event) {
-  if (shouldRevealTaskbarOnTouch(event)) {
-    showTaskbar();
-    resetHideTimer();
-  }
-}
-
-function handlePointerMove(event) {
-  if (window.innerHeight - event.clientY < 120) {
-    showTaskbar();
-    resetHideTimer();
-    return;
-  }
-
-  if (!taskbar.matches(":hover")) {
-    resetHideTimer();
-  }
-}
-
-window.addEventListener("mousemove", handlePointerMove);
-window.addEventListener("touchstart", handleTouchStart, { passive: true });
-window.addEventListener("touchend", resetHideTimer);
-window.addEventListener("resize", updateTaskbarMode);
-taskbar.addEventListener("mouseenter", showTaskbar);
-taskbar.addEventListener("mouseleave", resetHideTimer);
 if (imageModal) {
   imageModal.addEventListener("click", (event) => {
     if (event.target === imageModal || event.target.dataset.closeModal !== undefined) {
@@ -824,18 +816,22 @@ if (imageModalClose) {
 if (projectModalClose) {
   projectModalClose.addEventListener("click", closeProjectModal);
 }
+if (projectModalThumbnailsPrev) {
+  projectModalThumbnailsPrev.addEventListener("click", () => {
+    projectModalThumbnails.scrollBy({ left: -140, behavior: "smooth" });
+  });
+}
+if (projectModalThumbnailsNext) {
+  projectModalThumbnailsNext.addEventListener("click", () => {
+    projectModalThumbnails.scrollBy({ left: 140, behavior: "smooth" });
+  });
+}
 if (projectModal) {
   projectModal.addEventListener("click", (event) => {
     if (event.target === projectModal || event.target.dataset.closeModal !== undefined) {
       closeProjectModal();
     }
   });
-}
-if (projectModalPrev) {
-  projectModalPrev.addEventListener("click", () => changeProjectModalImage(-1));
-}
-if (projectModalNext) {
-  projectModalNext.addEventListener("click", () => changeProjectModalImage(1));
 }
 window.addEventListener("keydown", (event) => {
   if (event.key === "Escape") {
@@ -856,8 +852,14 @@ taskbarButtons.forEach((button) => {
   button.addEventListener("click", updateSection);
 });
 
+backToHeroButton?.addEventListener("click", () => {
+  document.querySelector(".hero-panel")?.scrollIntoView({
+    behavior: "smooth",
+    block: "start",
+  });
+});
+
 setActiveSection("about");
-updateTaskbarMode();
 
 /* ==================== PDF VIEWER ==================== */
 const pdfWorkerSrc = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
@@ -923,20 +925,23 @@ async function renderPage(pageNum) {
 }
 
 async function loadPDF(url) {
+  pdfModal.classList.add("show");
+  pdfLoading.classList.remove("error");
+  pdfLoading.textContent = "Loading...";
+  pdfLoading.classList.add("show");
+
   try {
-    pdfLoading.classList.add("show");
     pdfDoc = await pdfjsLib.getDocument(url).promise;
     pdfTotalPages.textContent = pdfDoc.numPages;
     currentPage = 1;
     currentZoom = window.innerWidth <= 720 ? 1.05 : 1.5;
     
     await renderPage(1);
-    pdfModal.classList.add("show");
     pdfLoading.classList.remove("show");
   } catch (error) {
     console.error("Error loading PDF:", error);
-    alert("Failed to load PDF. Please try downloading instead.");
-    pdfLoading.classList.remove("show");
+    pdfLoading.textContent = "Unable to load the resume. Please close this window and try again.";
+    pdfLoading.classList.add("error");
   }
 }
 
