@@ -170,7 +170,7 @@ const sections = {
             </div>
             <div class="timeline-meta">
               <i class="fa-regular fa-calendar"></i>
-              <span>March 2025 - May 2025</span>
+              <span>February 2025 - May 2025</span>
             </div>
             <ul>
               <li>Provided technical support and troubleshooting for organization-wide hardware and software.</li>
