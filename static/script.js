@@ -153,7 +153,8 @@ const sections = {
               <span>April 2026 - Present</span>
             </div>
             <ul>
-              <li>Verified health and dental insurance eligibility by evaluating submitted legal documentation from corporate clients and enrolling employees.</li>
+              <li>Verified health and dental insurance eligibility of clients by evaluating corporate legal documentation.</li>
+              <li>Performed meticulous data validation of submitted documents against the internal system to check whether the data was accurate.</li>
               <li>Developed a custom Excel automation tool tailored to the workflow, significantly boosting processing speed and reducing errors.</li>
             </ul>
           </div>
